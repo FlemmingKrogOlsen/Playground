@@ -4,32 +4,64 @@ import {
   useSearchParams,
   useLocation
 } from "react-router-dom";
-import { getInvoices } from "../data";
+import { getInvoices } from "../../data";
 
 import type { LinkProps } from "react-router-dom";
+import styled from "styled-components";
+import { theme } from "../../theme/theme";
+import { Main } from '../styled'
 
-function QueryNavLink({ to, ...props }: LinkProps) {
+const QueryNavLink = ({ to, ...props }: LinkProps) => {
   let location = useLocation();
   return <NavLink to={to + location.search} {...props}
     style={({ isActive }) => ({
       display: "block",
       margin: "1rem 0",
-      color: isActive ? "red" : "gray"
+      color: isActive ? theme.activeColor : theme.inactiveColor
     })} />;
 }
 
-export default function Invoices() {
+const InvoicesBanner = styled.header`
+  background: ${({ theme }) => theme.main};
+  padding:  1rem;
+  width: 100%;
+  color: white;
+`;
+
+const Container = styled.div`
+  display: flex;
+  nav {
+    border-right: 1px solid;
+    padding: 1rem;
+    height: calc(100vh - 88px);
+  }
+  input {
+    padding: 0.5rem;
+    border-radius: 7px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 1.75rem;
+    &:focus-visible {
+      background-color: #f3f3f3;
+    }
+  }
+`;
+
+export const InvoicesMainPage = () => {
+  return (
+    <Main>
+      <InvoicesBanner>Select an invoice</InvoicesBanner>
+    </Main>
+  )
+}
+
+const Invoices = () => {
   let invoices = getInvoices();
   let [searchParams, setSearchParams] = useSearchParams();
 
   return (
-    <div style={{ display: "flex" }}>
-      <nav
-        style={{
-          borderRight: "solid 1px",
-          padding: "1rem"
-        }}
-      >
+    <Container>
+      <nav>
         <input
           value={searchParams.get("filter") || ""}
           onChange={event => {
@@ -58,6 +90,8 @@ export default function Invoices() {
           ))}
       </nav>
       <Outlet />
-    </div>
+    </Container>
   );
 }
+
+export default Invoices;

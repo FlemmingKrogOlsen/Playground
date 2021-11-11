@@ -1,15 +1,14 @@
 import { useParams, useNavigate  } from "react-router-dom";
-import { getInvoice, deleteInvoice  } from "../data";
+import { getInvoice, deleteInvoice  } from "../../data";
+import { Main } from '../styled'
 
-export default function Invoice() {
+const Invoice = () => {
   let navigate = useNavigate();
   let params = useParams();
   let invoice = getInvoice(parseInt(params.invoiceId || "0", 10));
-
-
   
   return (
-    <main style={{ padding: "1rem" }}>
+    <Main>
       {!invoice ? (
         <div>Invoice Not found</div>
       ) : (
@@ -31,6 +30,8 @@ export default function Invoice() {
           </p>
         </>
       )}
-    </main>
+    </Main>
   );
 }
+
+export default Invoice;

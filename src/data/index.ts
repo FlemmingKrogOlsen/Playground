@@ -38,17 +38,11 @@ let invoices: Invoice[] = [
     }
   ];
   
-  export function getInvoices() {
-    return invoices;
-  }
+  export const getInvoices = () => invoices; 
 
-  export function getInvoice(number:number) {
-    return invoices.find(
-      invoice => invoice.number === number
-    );
-  }
+  export const getInvoice = (number:number) => invoices.find(invoice => invoice.number === number);
 
-  export function deleteInvoice(number:number) {
+  export const deleteInvoice = (number:number) => {
     invoices = invoices.filter(
       invoice => invoice.number !== number
     );

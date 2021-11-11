@@ -1,51 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from 'styled-components';
-
-import './index.css';
+import './theme/index.css';
 import reportWebVitals from './reportWebVitals';
-
-import App from './App'
-import About from './routes/about';
-import Invoices from './routes/invoices';
-import Invoice from './routes/invoice';
-
-export const theme = {
-  main: "#123456",
-  activeColor: "#c8d1db",
-  inactiveColor: "#8f9ba7",
-};
+import Routing from './routes'
+import { theme } from './theme/theme';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route path="about" element={<About />} />
-            <Route path="invoices" element={<Invoices />}>
-              <Route
-                index
-                element={
-                  <main style={{ padding: "1rem" }}>
-                    <p>Select an invoice</p>
-                  </main>
-                }
-              />
-              <Route path=":invoiceId" element={<Invoice />} />
-            </Route>
-            <Route
-              path="*"
-              element={
-                <main style={{ padding: "1rem" }}>
-                  <p>404 Page not found</p>
-                </main>
-              }
-            />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Routing />
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
