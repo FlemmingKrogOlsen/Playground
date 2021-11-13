@@ -1,17 +1,21 @@
 import { Outlet } from "react-router-dom";
-import { Header, MenuLink, BrandLink, Navigation } from "./styles";
+import { Header, MenuLink, BrandLink, Footer } from "./styles";
+import Contact from './contact'
 
 const Layout = () => {
   return (
     <>
       <Header>
         <BrandLink to="/">Invoices</BrandLink>
-        <Navigation>
+        <nav>
           <MenuLink to="/invoices">Invoices</MenuLink>
           <MenuLink to="/about">About</MenuLink>
-        </Navigation>
+        </nav>
       </Header>
       <Outlet />
+      <Footer>
+        <Contact />
+      </Footer>
     </>
   );
 }
