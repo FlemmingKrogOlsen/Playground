@@ -62,7 +62,7 @@ export const Footer = styled.footer`
   padding: 0.5rem 1rem;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   a {
     text-decoration: none;
     color: white;
