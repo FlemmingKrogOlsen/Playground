@@ -44,6 +44,16 @@ const About = () => {
                         </td>
                     </tr>
 
+                    <tr>
+                        <td>
+                            Github Pages Deploy
+                        </td>
+                        <td>v 3.2.3</td>
+                        <td style={{ textAlign: "right" }}>
+                            <a href="https://github.com/tschaub/gh-pages" rel="noreferrer" target="_blank">link</a>
+                        </td>
+                    </tr>
+
 
                 </tbody>
             </table>
@@ -52,7 +62,7 @@ const About = () => {
             npx create-react-app --template typescript<br />
             npm install react-router-dom@6 history@5 @types/react-router-dom<br />
             npm install styled-components @types/styled-components
-
+            npm install gh-pages --save-dev
         </Main>
     );
 }
