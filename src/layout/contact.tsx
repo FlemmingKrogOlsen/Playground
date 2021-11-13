@@ -35,7 +35,7 @@ const Contact = () => {
         contactInfo.map((contact) => {
           return (
             <a key={contact.id} href={contact.url} rel="noreferrer" target="_blank">
-              <Image src={contact.image} alt={contact.imageAlt} />
+              <Image src={`/Playground/` + contact.image} alt={contact.imageAlt} />
             </a>
           )
         })
