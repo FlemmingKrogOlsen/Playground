@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from '../pages/Home'
+import Layout from '../layout'
+import Home from '../pages/Home';
 import About from '../pages/About';
 import Invoices, { InvoicesMainPage } from '../pages/Invoices/invoices';
 import Invoice from '../pages/Invoices/invoice';
@@ -12,9 +13,10 @@ const Routing = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="about" element={<About />} />
-          <Route path="invoices" element={<Invoices />}>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/invoices" element={<Invoices />}>
             <Route index element={<InvoicesMainPage />} />
             <Route path=":invoiceId" element={<Invoice />} />
           </Route>

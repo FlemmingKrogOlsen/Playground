@@ -8,18 +8,22 @@ import { getInvoices } from "../../data";
 
 import type { LinkProps } from "react-router-dom";
 import styled from "styled-components";
-import { theme } from "../../theme/theme";
 import { Main } from '../styled'
 
 const QueryNavLink = ({ to, ...props }: LinkProps) => {
   let location = useLocation();
-  return <NavLink to={to + location.search} {...props}
-    style={({ isActive }) => ({
-      display: "block",
-      margin: "1rem 0",
-      color: isActive ? theme.activeColor : theme.inactiveColor
-    })} />;
+  return <StyledNavLink to={to + location.search} {...props}/>;
 }
+
+const StyledNavLink = styled(NavLink)`
+  display: block;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: ${({theme}) => theme.activeColor};
+  &.active {
+    color: ${({theme}) => theme.inactiveColor};
+  }
+`;
 
 const InvoicesBanner = styled.header`
   background: ${({ theme }) => theme.main};
