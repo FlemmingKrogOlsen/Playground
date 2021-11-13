@@ -11,7 +11,7 @@ const error404 = "Error 404 : Page not found"
 
 const Routing = () => {
   return (
-    <BrowserRouter basename='/'>
+    <BrowserRouter basename='/Playground'>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
