@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { Header, MenuLink, BrandLink, Footer, MainContent } from "./styles";
 import Contact from './contact'
 
@@ -16,6 +16,10 @@ const Layout = () => {
         <Outlet />
       </MainContent>
       <Footer>
+        <div style={{lineHeight:"2rem"}}>
+        <Link to="/">flemmingkrogolsen.github.io/Playground/</Link>
+        
+        </div>
         <Contact />
       </Footer>
     </>

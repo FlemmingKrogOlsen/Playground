@@ -30,7 +30,7 @@ const contactInfo: IContactProps[] = [
 
 const Contact = () => {
   return (
-    <>
+    <div>
       {
         contactInfo.map((contact) => {
           return (
@@ -40,7 +40,7 @@ const Contact = () => {
           )
         })
       }
-    </>
+    </div>
   );
 }
 
