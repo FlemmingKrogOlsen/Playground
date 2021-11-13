@@ -46,7 +46,7 @@ const About = () => {
 
                     <tr>
                         <td>
-                            Github Pages Deploy
+                            Github Pages Deploy CI/CD
                         </td>
                         <td>v 3.2.3</td>
                         <td style={{ textAlign: "right" }}>
