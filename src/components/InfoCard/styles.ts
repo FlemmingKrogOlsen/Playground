@@ -20,13 +20,24 @@ border-radius: 0.5rem;
 padding: 0.75rem;
 max-width: 800px;
 box-shadow: ${shadow};
+&:hover {
+  &::after {
+    transform: rotate(calc(${rotate} * -1));
+  }
+
+  &::before {
+    transform: rotate(${rotate});
+  }
+
+}
 
 &::after ,&::before {
+  content: "";
+  transition: all 1s ease-in-out;
   box-shadow:${shadow};
   position: absolute;
   top: 0;
   left: calc((${oversizeWidth} / 2) * -1);
-  content: "";
   width: calc(100% + ${oversizeWidth});
   height: calc(100% + ${oversizeHeight});
   z-index: -1;
