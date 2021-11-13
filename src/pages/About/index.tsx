@@ -19,7 +19,7 @@ const About = () => {
                             React Typescript
                         </td>
                         <td>v 17.0.2 / v 4.1.2</td>
-                        <td>
+                        <td style={{textAlign:"right"}}>
                             <a href=" https://create-react-app.dev/" rel="noreferrer" target="_blank">link</a>
                         </td>
                     </tr>
@@ -30,7 +30,7 @@ const About = () => {
                             React Router
                         </td>
                         <td>v 6.0.2</td>
-                        <td>
+                        <td style={{textAlign:"right"}}>
                             <a href="https://reactrouter.com/" rel="noreferrer" target="_blank">link</a>
                         </td>
                     </tr>
@@ -40,7 +40,7 @@ const About = () => {
                             Styled-Components
                         </td>
                         <td>v 5.3.3</td>
-                        <td>
+                        <td style={{textAlign:"right"}}>
                             <a href="https://styled-components.com/" rel="noreferrer" target="_blank">link</a>
                         </td>
                     </tr>
@@ -51,7 +51,7 @@ const About = () => {
 
             <hr style={{ margin: "20px 0" }} />
             npx create-react-app --template typescript<br />
-            npm add react-router-dom@6 history@5 @types/react-router-dom<br />
+            npm install react-router-dom@6 history@5 @types/react-router-dom<br />
             npm install styled-components @types/styled-components
 
         </Main>
