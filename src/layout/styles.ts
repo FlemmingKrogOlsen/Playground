@@ -40,6 +40,7 @@ export const Header = styled.header`
 export const BrandLink = styled(Link)`
   font-size: 3rem;
   color: white;
+  font-weight: 700;
 `;
 
 export const MenuLink = styled(NavLink)`
@@ -53,7 +54,6 @@ export const MenuLink = styled(NavLink)`
     margin-left: 1rem;
   }
 `;
-
 
 export const Footer = styled.footer`
   position: fixed;
