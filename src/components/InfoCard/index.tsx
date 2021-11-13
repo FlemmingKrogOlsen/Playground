@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import {StyledCard, Header} from './styles';
+import {StyledCard, Header, Container } from './styles';
 
 interface IProps {
     header: string
@@ -8,10 +8,12 @@ interface IProps {
 
 const InfoCard: FC<IProps> = ({ header, children }) => {
     return (
+        <Container>
         <StyledCard>
             <Header>{header}</Header>
             {children}
         </StyledCard>
+        </Container>
     )
 }
 
