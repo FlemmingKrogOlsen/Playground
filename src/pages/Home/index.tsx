@@ -1,14 +1,5 @@
 import { Main } from "../styled";
-import ProgressIndicatorCard from "../../components/ProgressIndicator";
 import styled from "styled-components";
-
-const colors = {
-  cardTextColor: "#123456",
-  cardBackground: "white",
-  barBackground: "#dedede",
-  barColor: "#123456",
-  barTextColor: "#123456",
-};
 
 const Container = styled.div`
   display: flex;
@@ -21,15 +12,7 @@ const Home = () => {
     <Main>
       <h2>Home</h2>
       <Container>
-        <ProgressIndicatorCard value={75} colors={colors}>
-          Progress title
-        </ProgressIndicatorCard>
-        <ProgressIndicatorCard value={45} colors={colors}>
-          Progress title
-        </ProgressIndicatorCard>
-        <ProgressIndicatorCard value={29} colors={colors}>
-          Progress title
-        </ProgressIndicatorCard>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi animi vel consequuntur minus fuga deserunt culpa voluptatem rerum repellat? Recusandae alias, magni qui, similique maiores rem quo velit voluptas ratione modi ipsum voluptatibus aut optio veritatis itaque et enim nemo adipisci nesciunt dolorem error odit! Debitis tenetur corrupti ipsa facere enim asperiores, tempore molestias fugiat sint perferendis totam! Rem, quibusdam. Magnam hic dolorem reprehenderit minima ratione, veritatis tempore laboriosam, voluptatum illo aliquam consequatur magni dolores nam voluptate illum labore. Enim itaque odio vero quas placeat quod, alias facilis ad quia quis magni inventore ipsam eligendi soluta dignissimos molestiae voluptatum laborum!
       </Container>
     </Main>
   );

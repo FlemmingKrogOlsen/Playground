@@ -1,14 +1,10 @@
 import { Main } from '../styled'
-import { InfoCard } from '../../components/'
-
 
 const About = () => {
     return (
         <Main>
             <h2>About</h2>
-            <InfoCard header="Have to think about this !!!">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit corrupti dolorem ipsam quas reiciendis neque earum reprehenderit nulla sunt cupiditate ducimus deserunt libero tempore magnam quasi sed, laboriosam possimus corporis molestiae nostrum pariatur alias praesentium. Accusantium, ipsa quo deserunt libero esse numquam molestiae qui totam perferendis illum cum. Atque blanditiis, laudantium quos nostrum consequatur iure fugit eveniet architecto quisquam quod ex esse ab accusantium veniam cupiditate illum iusto rerum facere at consequuntur explicabo natus mollitia ducimus? Omnis in deserunt perspiciatis similique quisquam, rerum consequuntur accusantium facilis, qui amet culpa, cupiditate perferendis eius veritatis! Asperiores tempore dolor, voluptates accusantium quas quaerat?
-            </InfoCard>
+
             <h3 style={{ marginTop: "40px" }}>What was used?</h3>
             <table style={{ width: "100%" }}>
                 <tbody>
@@ -63,7 +59,9 @@ const About = () => {
             npm install react-router-dom@6 history@5 @types/react-router-dom<br />
             npm install styled-components @types/styled-components<br />
             npm install gh-pages --save-dev<br />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br />
+            more info as we go along :P
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </Main>
