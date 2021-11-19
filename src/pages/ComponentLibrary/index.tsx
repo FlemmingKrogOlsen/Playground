@@ -45,7 +45,7 @@ const Container = styled.div`
 
   }
 
-  input {
+  input[type=text] {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px 0px inset,rgba(0, 0, 0, 0.3) 0px -1px 3px 0px inset; 
     padding: 0.25rem 0.5rem;
     border-radius: 7px;
@@ -70,6 +70,7 @@ const Components = () => {
     <Container>
       <nav>
         <input
+        type="text"
           value={searchParams.get("filter") || ""}
           placeholder="Search"
           onChange={(event) => {
