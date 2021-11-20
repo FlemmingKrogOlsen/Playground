@@ -1,8 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-const barHeight = 16;
-
 const bars = css`
   &::before,
   &::after {
@@ -16,18 +14,18 @@ const bars = css`
   }
 
   &::before {
-    top: ${barHeight}px;
+    top: 16px;
   }
 
   &::after {
-    bottom: ${barHeight}px;
+    bottom: 16px;
   }
 `;
 
 export const Header = styled.header`
   ${bars};
   position: relative;
-  background-color: ${({ theme }) => theme.main};
+  background-color: ${({ theme }) => theme.COLOR.PRIMARY};
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -46,9 +44,9 @@ export const BrandLink = styled(Link)`
 export const MenuLink = styled(NavLink)`
   font-size: 1.25rem;
   line-height: 2.25rem;
-  color: ${({ theme }) => theme.inactiveColor};
+  color: ${({ theme }) => theme.NAVMENU.INACTIVE};
   &.active {
-    color: ${({ theme }) => theme.activeColor};
+    color: ${({ theme }) => theme.NAVMENU.ACTIVE};
   }
   &:not(:first-child) {
     margin-left: 1rem;
@@ -58,7 +56,7 @@ export const MenuLink = styled(NavLink)`
 export const Footer = styled.footer`
   position: fixed;
   bottom: 0;
-  background-color: ${({ theme }) => theme.main};
+  background-color: ${({ theme }) => theme.COLOR.PRIMARY};
   padding: 0.5rem 1rem;
   width: 100%;
   display: flex;
@@ -78,7 +76,7 @@ export const Image = styled.img`
   }
 `;
 
-export const  MainContent = styled.div<{maxWidth: number}>`
-  max-width: ${props => props.maxWidth}px;
+export const MainContent = styled.div<{ maxWidth: number }>`
+  max-width: ${({ maxWidth }) => maxWidth}px;
   margin: auto;
 `;

@@ -11,7 +11,7 @@ export const Main = styled.main`
     border-radius: 12px;
 
     // Firefox scrollbar support
-    scrollbar-color: ${({ theme }) => theme.main} transparent;
+    scrollbar-color: ${({ theme }) => theme.COLOR.PRIMARY} transparent;
     scrollbar-width: thin;
 
     // Webkit scrollbar support
@@ -20,6 +20,6 @@ export const Main = styled.main`
       background-color: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      background: linear-gradient(${({ theme }) => theme.main}, rgba(18, 52, 86, 0.5));
+      background: linear-gradient(${({ theme }) => theme.COLOR.PRIMARY}, rgba(18, 52, 86, 0.5));
     }
 `;

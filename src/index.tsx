@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import './theme/index.css';
 import reportWebVitals from './reportWebVitals';
 import Routing from './routes'
-import { theme } from './theme/theme';
+import { theme } from './theme';
 
 ReactDOM.render(
   <React.StrictMode>

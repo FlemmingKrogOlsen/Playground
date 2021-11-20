@@ -20,17 +20,18 @@ const StyledNavLink = styled(NavLink)`
   display: block;
   margin: 1rem 0;
   text-decoration: none;
-  color: ${({ theme }) => theme.activeColor};
+  color: ${({ theme }) => theme.NAVMENU.ACTIVE};
   &.active {
-    color: ${({ theme }) => theme.inactiveColor};
+    color: ${({ theme }) => theme.NAVMENU.INACTIVE};
   }
 `;
 
 export const PageBanner = styled.header`
-  background: ${({ theme }) => theme.main};
+  background: ${({ theme }) => theme.COLOR.PRIMARY};
   padding: 1rem;
   width: 100%;
   color: white;
+  margin-bottom: 10px;
 `;
 
 const Container = styled.div`
