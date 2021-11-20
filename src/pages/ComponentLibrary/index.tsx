@@ -10,6 +10,7 @@ import type { LinkProps } from "react-router-dom";
 import styled from "styled-components";
 import { Main } from "../styled";
 
+
 const QueryNavLink = ({ to, ...props }: LinkProps) => {
   let location = useLocation();
   return <StyledNavLink to={to + location.search} {...props} />;
@@ -40,20 +41,24 @@ const Container = styled.div`
     top: 0;
     right: calc(100% + 10px);
     background: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 12px;
-
+    a {
+      padding: 0 0.5rem;
+    }
   }
 
-  input[type=text] {
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px 0px inset,rgba(0, 0, 0, 0.3) 0px -1px 3px 0px inset; 
+  input[type="text"] {
     padding: 0.25rem 0.5rem;
     border-radius: 7px;
     border: none;
     outline: none;
     width: 250px;
+    background-color: #f3f3f3;
+    color: gray;
+
     &:focus-visible {
-      background-color: #f3f3f3;
+      font-weight: bold;
     }
   }
 `;
@@ -69,19 +74,19 @@ const Components = () => {
   return (
     <Container>
       <nav>
-        <input
-        type="text"
-          value={searchParams.get("filter") || ""}
-          placeholder="Search"
-          onChange={(event) => {
-            let filter = event.target.value;
-            if (filter) {
-              setSearchParams({ filter });
-            } else {
-              setSearchParams({});
-            }
-          }}
-        />
+          <input
+            type="text"
+            value={searchParams.get("filter") || ""}
+            placeholder="Search"
+            onChange={(event) => {
+              let filter = event.target.value;
+              if (filter) {
+                setSearchParams({ filter });
+              } else {
+                setSearchParams({});
+              }
+            }}
+          />
         {pages
           .filter((page) => {
             let filter = searchParams.get("filter");

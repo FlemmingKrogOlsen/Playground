@@ -6,8 +6,9 @@ export const Main = styled.main`
     background-color: white;
     height: calc(100vh - 170px); // 90 + 48 + 16 + 16 = 170 (( Header + Footer + MarginTop + MarginBottom ))
     margin: 1rem 0;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px 0px inset,rgba(0, 0, 0, 0.3) 0px -5px 10px 0px inset; 
+    /* box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px 0px inset,rgba(0, 0, 0, 0.3) 0px -5px 10px 0px inset;  */
     overflow-y: auto;
+    border-radius: 12px;
 
     // Firefox scrollbar support
     scrollbar-color: ${({ theme }) => theme.main} transparent;
