@@ -1,3 +1,5 @@
-import  InfoCard from './InfoCard';
+import InfoCard from './InfoCard';
+import ProgressIndicatorCard from './ProgressIndicator';
+import DragNDrop from './DragNDrop';
 
-export {InfoCard}
+export { InfoCard, ProgressIndicatorCard, DragNDrop }

@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import ProgressIndicatorCardPage from './pages/ProgressIndicatorCardPage'
 import InfoCardPage from './pages/InfoCardPage'
+import DragNDropPage from './pages/DragNDropPage'
 
 interface ComponentPage {
   name: string,
@@ -22,6 +23,11 @@ let componentPages: ComponentPage[] = [
     name: "Info Card",
     id: 2,
     component: InfoCardPage,
+  },
+  {
+    name: "Drag 'N Drop",
+    id: 3,
+    component: DragNDropPage,
   }
 ];
 
