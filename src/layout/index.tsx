@@ -12,7 +12,7 @@ const Layout = () => {
           <MenuLink to="/about">About</MenuLink>
         </nav>
       </Header>
-      <MainContent maxWidth={1000}>
+      <MainContent maxWidth={800}>
         <Outlet />
       </MainContent>
       <Footer>
