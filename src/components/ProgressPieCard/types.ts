@@ -6,7 +6,6 @@ export interface IProps {
       cardBackground?: string;
       barBackground?: string;
       barColor?: string;
-      barTextHoverColor?: string;
       barTextColor?: string;
     };
   }
