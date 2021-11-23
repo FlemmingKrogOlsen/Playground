@@ -1,35 +1,41 @@
 import styled from "styled-components";
+import { configType } from "./types";
 
 const tbodyRowHeight: number = 29;
 const theadRowHeight: number = tbodyRowHeight + 10;
 
-const Container = styled.div<{ maxRows?: number }>`
+const Wrapper = styled.div<{ color: string }>`
+  background: ${({ color }) => color};
+`;
+
+const Container = styled.div<{ config: configType }>`
   padding-right: 5px;
-  background: #123456;
 
   div {
-    height: ${({ maxRows }) =>
-    maxRows
-      ? maxRows * tbodyRowHeight + theadRowHeight
+    height: ${({ config }) =>
+    config.maxRows
+      ? (config.maxRows + 1) * tbodyRowHeight + theadRowHeight
       : 200}px;
     overflow-y: auto;
-    border-bottom: 5px solid #123456;
+    border-bottom: 5px solid ${({ config }) => config.backgrondColor};
 
+    // Firefox scrollbar support
+    scrollbar-color: ${({ config }) => config.header?.backgroundColor} transparent;
+    scrollbar-width: thin;
+
+    // Webkit scrollbar support
     &::-webkit-scrollbar {
       width: 10px;
-      background-color: #123456;
     }
     &::-webkit-scrollbar-thumb {
       border-radius: 5px;
-      background-color: #123456;
-      border: 2px solid white;
+      border: 2px solid ${({ config }) => config.header?.backgroundColor};
     }
   }
 `;
 
-const Title = styled.div`
-  background: #123456;
-  color: white;
+const Caption = styled.div<{ color: string }>`
+  color: ${({ color }) => color};
   text-transform: uppercase;
   font-weight: bold;
   font-size: 32px;
@@ -37,20 +43,19 @@ const Title = styled.div`
   padding: 0 5px;
 `;
 
-const Table = styled.table`
+const Table = styled.table<{ config: configType }>`
   width: 100%;
   border-spacing: 0;
   padding: 0 5px;
-  background: #123456;
 
   thead {
     top: 0px;
     position: sticky;
-    background: white;
+    background: ${({ config }) => config.header?.backgroundColor};
     text-align: left;
-    color: #123456;
+    color: ${({ config }) => config.header?.textColor};
     tr th {
-      border-bottom: 5px solid #123456;
+      border-bottom: 5px solid ${({ config }) => config.backgrondColor};
       padding: 5px 15px 5px 10px;
     }
   }
@@ -60,16 +65,18 @@ const Table = styled.table`
       td {
         padding: 5px 15px 5px 10px;
       }
-      color: black;
       &:nth-child(odd) {
-        background-color: lightgray;
+        color: ${({ config }) => config.body?.odd?.textColor};
+        background-color: ${({ config }) => config.body?.odd?.backgroundColor};
       }
       &:nth-child(even) {
-        background-color: #dedede;
+        color: ${({ config }) => config.body?.even?.textColor};
+        background-color: ${({ config }) => config.body?.even?.backgroundColor};
       }
       &:hover {
-        background: gray;
-        color: white;
+        color: ${({ config }) => config.body?.hover?.textColor};
+        background-color: ${({ config }) =>
+    config.body?.hover?.backgroundColor};
       }
     }
   }
@@ -79,11 +86,11 @@ const Table = styled.table`
     text-align: right;
     height: 30px;
     padding: 3px 15px 0 5px;
-    color: white;
+    color: ${({ config }) => config.footer?.textColor};
     bottom: 0px;
     position: sticky;
-    background: #123456;
+    background: ${({ config }) => config?.backgrondColor};
   }
 `;
 
-export { Table, Container, Title };
+export { Table, Container, Caption, Wrapper };

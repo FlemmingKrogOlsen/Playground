@@ -1,62 +1,20 @@
 import { TableFixedHeader } from "../../../../components";
-import type { tableDataType } from "../../../../components/TableFixedHeader";
+import type { configType } from "../../../../components/TableFixedHeader/types";
+import { data } from "./data";
 
-const data: tableDataType = {
-  headers: ["Make", "Model", "Color", "Year"],
-  rows: [
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "1999"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2000"],
-    },
-    {
-      title: "Ford",
-      data: ["Escort", "Blue", "2001"],
-    },
-  ],
+const config: configType = {
+  maxRows: 5
 };
 
 const TableFixedHeaderPage = () => {
-  return <TableFixedHeader title="tabel" footer="footer" data={data} />;
+  return (
+    <TableFixedHeader
+      caption="Caption Text"
+      footer="Footer Text"
+      data={data}
+      config={config}
+    />
+  );
 };
 
 export default TableFixedHeaderPage;
