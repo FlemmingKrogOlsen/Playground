@@ -1,17 +1,4 @@
-import { FC, ReactNode } from "react";
 import styled from "styled-components";
-
-interface IProps {
-  children: ReactNode;
-  value: number;
-  colors?: {
-    cardTextColor?: string;
-    cardBackground?: string;
-    barBackground?: string;
-    barColor?: string;
-    barTextColor?: string;
-  };
-}
 
 const pathLength: number = 471.24; /* don't change this */
 
@@ -26,7 +13,7 @@ const Number = styled.div<{ color: string }>`
   }
 `;
 
-const Card = styled.div<{ background: string }>`
+const Card = styled.div<{ background: string, hover: string }>`
   display: inline-block;
   position: relative;
   background: ${({ background }) => background};
@@ -74,41 +61,4 @@ const CircleBackGround = styled.circle<{ color: string }>`
   stroke: ${({ color }) => color};
 `;
 
-const defaultColors = {
-  cardTextColor: "#123456",
-  cardBackground: "white",
-  barBackground: "#dedede",
-  barColor: "#123456",
-  barTextColor: "#123456",
-};
-
-const ProgressIndicatorCard: FC<IProps> = ({ children, value, colors }) => {
-  return (
-    <Card background={colors?.cardBackground || defaultColors.cardBackground}>
-      <SvgContainer>
-        <SVG
-          viewBox="0 0 160 160"
-          value={value}
-          stroke={colors?.barColor || defaultColors.barColor}
-        >
-          <CircleBackGround
-            color={colors?.barBackground || defaultColors.barBackground}
-            cx="80"
-            cy="80"
-            r="75"
-          />
-          <circle cx="80" cy="80" r="75" />
-        </SVG>
-        <Number color={colors?.barTextColor || defaultColors.barTextColor}>
-          {value}
-          <span>%</span>
-        </Number>
-      </SvgContainer>
-      <Text color={colors?.cardTextColor || defaultColors.cardTextColor}>
-        {children}
-      </Text>
-    </Card>
-  );
-};
-
-export default ProgressIndicatorCard;
+export { Number, Card, Text, SvgContainer, SVG, CircleBackGround };

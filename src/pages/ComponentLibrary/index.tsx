@@ -20,9 +20,9 @@ const StyledNavLink = styled(NavLink)`
   display: block;
   margin: 1rem 0;
   text-decoration: none;
-  color: ${({ theme }) => theme.NAVMENU.ACTIVE};
+  color: ${({ theme }) => theme.NAVMENU.INACTIVE};
   &.active {
-    color: ${({ theme }) => theme.NAVMENU.INACTIVE};
+    color: ${({ theme }) => theme.NAVMENU.ACTIVE};
   }
 `;
 
@@ -41,9 +41,9 @@ const Container = styled.div`
     position: absolute;
     top: 0;
     right: calc(100% + 10px);
-    background: white;
+    background: ${({ theme }) => theme.COLOR.PRIMARY};
     padding: 5px;
-    border-radius: 12px;
+    border-radius: 0.5rem;
     a {
       padding: 0 0.5rem;
     }
@@ -51,7 +51,7 @@ const Container = styled.div`
 
   input[type="text"] {
     padding: 0.25rem 0.5rem;
-    border-radius: 7px;
+    border-radius: 0.25rem;
     border: none;
     outline: none;
     width: 250px;

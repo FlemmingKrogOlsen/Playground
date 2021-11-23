@@ -13,7 +13,7 @@ interface ComponentPage {
 
 let componentPages: ComponentPage[] = [
   {
-    name: "Progress Indicator Card",
+    name: "Progress Pie Card",
     id: 1,
 
     component: ProgressIndicatorCardPage,

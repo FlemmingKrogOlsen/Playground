@@ -1,6 +1,6 @@
 import InfoCard from './InfoCard';
-import ProgressIndicatorCard from './ProgressIndicator';
+import ProgressPieCard from './ProgressPieCard';
 import DragNDrop from './DragNDrop';
 import TableFixedHeader from './TableFixedHeader';
 
-export { InfoCard, ProgressIndicatorCard, DragNDrop, TableFixedHeader }
+export { InfoCard, ProgressPieCard, DragNDrop, TableFixedHeader }

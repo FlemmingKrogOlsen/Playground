@@ -5,7 +5,7 @@ export const theme = {
     TEXT: "#ffffff",
   },
   NAVMENU: {
-    ACTIVE: "#c8d1db",
+    ACTIVE: "#ffffff",
     INACTIVE: "#8f9ba7",
   },
   DEFAULTS: {
