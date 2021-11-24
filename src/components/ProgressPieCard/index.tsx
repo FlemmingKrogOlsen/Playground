@@ -15,6 +15,7 @@ export const defaultColors = {
   cardTextColor: "#123456",
   barBackground: "#dedede",
   barTextColor: "#123456",
+  barTextHoverColor: "#878787",
   barColor: "#123456",
 };
 
@@ -22,6 +23,7 @@ const ProgressPieCard: FC<IProps> = ({ children, value, colors }) => {
   return (
     <Card
       color={colors?.cardBackground || defaultColors.cardBackground}
+      hover={colors?.barTextHoverColor || defaultColors.barTextHoverColor}
     >
       <SvgContainer>
         <SVG

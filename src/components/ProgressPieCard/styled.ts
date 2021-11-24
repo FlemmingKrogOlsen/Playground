@@ -6,26 +6,23 @@ type ColorProps = {
   color: string;
 };
 
-const Number = styled.p.attrs<ColorProps>((props) => ({
-  style: {
-    color: props.color,
-  },
-}))<ColorProps>`
+interface ICardProps extends ColorProps {
+  hover: string;
+}
+
+const Number = styled.p<ColorProps>`
   position: absolute;
   font-size: 4rem;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: color 1s ease;
   cursor: default;
+  color: ${(props) => props.color};
   span {
     font-size: 1.5rem;
   }
 `;
 
-const Card = styled.div.attrs<ColorProps>((props) => ({
-  style: {
-    background: props.color,
-  },
-}))<ColorProps>`
+const Card = styled.div<ICardProps>`
   display: inline-block;
   position: relative;
   width: 250px;
@@ -33,22 +30,20 @@ const Card = styled.div.attrs<ColorProps>((props) => ({
   box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 30px 0px,
     rgba(0, 0, 0, 0.3) 0px 5px 10px 0px;
   margin: 0 10px 10px 10px;
+  background: ${(props) => props.color};
   &:hover {
     ${Number} {
-      opacity: 0.5;
+      color: ${({ hover }) => hover};
     }
   }
 `;
 
-const Text = styled.p.attrs<ColorProps>((props) => ({
-  style: {
-    color: props.color,
-  },
-}))<ColorProps>`
+const Text = styled.p<ColorProps>`
   font-size: 1.2rem;
   text-align: center;
   padding-bottom: 30px;
   cursor: default;
+  color: ${(props) => props.color};
 `;
 
 const SvgContainer = styled.div`
@@ -69,13 +64,10 @@ const SVG = styled.svg<{ value: number }>`
   stroke-width: 10;
 `;
 
-const CircleBackGround = styled.circle.attrs<ColorProps>((props) => ({
-  style: {
-    fill: props.color,
-    stroke: props.color,
-  },
-}))<ColorProps>`
+const CircleBackGround = styled.circle<ColorProps>`
   stroke-dashoffset: 0;
+  fill: ${(props) => props.color};
+  stroke: ${(props) => props.color};
 `;
 
 export { Number, Card, Text, SvgContainer, SVG, CircleBackGround };

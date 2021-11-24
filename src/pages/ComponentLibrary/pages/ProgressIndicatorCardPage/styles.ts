@@ -5,12 +5,6 @@ const Container = styled.div`
   justify-content: space-evenly;
 `;
 
-const ColorContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-`;
-
 const commonInputCss = css`
   width: 25px;
   height: 25px;
@@ -53,15 +47,6 @@ const Editor = styled.div`
   }
 `;
 
-const ColorPicker = styled.input.attrs({
-  type: "color",
-})`
-  width: 30px;
-  height: 30px;
-  border: none;
-  cursor: pointer;
-`;
-
 const CodeBlock = styled.div`
   background: white;
   color: black;
@@ -71,16 +56,4 @@ const CodeBlock = styled.div`
   font-size: 0.7rem;
 `;
 
-const Reset = styled.button`
-  width: 30px;
-  height: 30px;
-  border: none;
-  color: white;
-  font-size: 1.25rem;
-  line-height: 1.25rem;
-  background: transparent;
-  border: 4px solid white;
-  cursor: pointer;
-`;
-
-export { Container, Editor, ColorPicker, CodeBlock, Reset, ColorContainer };
+export { Container, Editor, CodeBlock };

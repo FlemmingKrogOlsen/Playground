@@ -2,22 +2,20 @@ import ProgressPieCard, {
   defaultColors,
 } from "../../../../components/ProgressPieCard";
 import { useState } from "react";
-import { Container, Editor, ColorPicker, CodeBlock, Reset,ColorContainer } from "./styles";
+import { Container, Editor, CodeBlock } from "./styles";
 
 const ProgressIndicatorCardPage = () => {
   const [rangeval, setRangeval] = useState<string>("50");
-  const [color, setColor] = useState(defaultColors);
+
   return (
     <>
       <Container>
-        <ProgressPieCard value={parseInt(rangeval)} colors={color}>
+        <ProgressPieCard value={parseInt(rangeval, 10)} colors={defaultColors}>
           Progress title
         </ProgressPieCard>
       </Container>
-      <br />
-      <br />
+
       <Editor>
-        
         <input
           type="range"
           min="0"
@@ -27,23 +25,9 @@ const ProgressIndicatorCardPage = () => {
           onChange={(event) => setRangeval(event.target.value)}
         />
 
-        <ColorContainer>
-          {Object.entries(color).map(([key, value]) => (
-            <ColorPicker
-              key={key}
-              title={key}
-              value={value}
-              onChange={(e) =>
-                setColor({ ...color, [key]: e.target.value.toString() })
-              }
-            />
-          ))}
-          <Reset title="Reset to default" onClick={() => setColor(defaultColors)}>&#x1f5d1;</Reset>
-        </ColorContainer>
-
         <CodeBlock>
           <code>
-            <pre>const colors = {JSON.stringify(color, null, 2)}</pre>
+            <pre>const colors = {JSON.stringify(defaultColors, null, 2)}</pre>
             <br />
             &#60;<b>ProgressPieCard</b>
             <br />
@@ -56,7 +40,6 @@ const ProgressIndicatorCardPage = () => {
             <br />
           </code>
         </CodeBlock>
-
       </Editor>
     </>
   );
