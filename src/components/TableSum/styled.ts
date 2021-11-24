@@ -8,28 +8,26 @@ const colors = {
   header: {
     backgroundColor: "#ffffff",
     textColor: "#123456",
-},
+  },
   body: {
     odd: {
-        backgroundColor: "#d3d3d3",
-        textColor: "#000000",
+      backgroundColor: "#d3d3d3",
+      textColor: "#000000",
     },
     even: {
-        backgroundColor: "#dedede",
-        textColor: "#000000",
+      backgroundColor: "#dedede",
+      textColor: "#000000",
     },
     hover: {
-        backgroundColor: "gray",
-        textColor: "#ffffff",
+      backgroundColor: "gray",
+      textColor: "#ffffff",
     },
-},
-  sum: "#fafafa",
-}
+  },
+};
 
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
-  box-shadow: 0 15px 30px 0 hsla(0, 0%, 0%, 0.2), 0 5px 10px 0 hsla(0, 0%, 0%, 0.2);
   margin-bottom: 10px;
   border: ${borderGap} solid ${colors.primary};
   background: ${colors.primary};
@@ -70,12 +68,10 @@ const TBody = styled.tbody`
     &:nth-child(odd) {
       background-color: ${colors.body.odd.backgroundColor};
       color: ${colors.body.odd.textColor};
-
     }
     &:hover {
       background: ${colors.body.hover.backgroundColor};
       color: ${colors.body.hover.textColor};
-
     }
   }
 
