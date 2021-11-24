@@ -2,25 +2,22 @@ import ProgressPieCard, {
   defaultColors,
 } from "../../../../components/ProgressPieCard";
 import { useState } from "react";
-import { Container, Editor, CodeBlock } from "./styles";
+import { CodeBlock, Editor, SpaceEvenly } from "../styled";
+import { ProcentageRange } from "../formElements_styled";
 
 const ProgressIndicatorCardPage = () => {
   const [rangeval, setRangeval] = useState<string>("50");
 
   return (
     <>
-      <Container>
+      <SpaceEvenly>
         <ProgressPieCard value={parseInt(rangeval, 10)} colors={defaultColors}>
           Progress title
         </ProgressPieCard>
-      </Container>
+      </SpaceEvenly>
 
       <Editor>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          step="1"
+        <ProcentageRange
           value={rangeval}
           onChange={(event) => setRangeval(event.target.value)}
         />
