@@ -4,6 +4,7 @@ import ProgressIndicatorCardPage from "./pages/ProgressIndicatorCardPage";
 import InfoCardPage from "./pages/InfoCardPage";
 import DragNDropPage from "./pages/DragNDropPage";
 import TableFixedHeaderPage from "./pages/TableFixedHeaderPage";
+import TableWithSumPage from "./pages/TableWithSumPage";
 
 interface ComponentPage {
   id: number;
@@ -31,6 +32,11 @@ let componentPages: ComponentPage[] = [
     id: 4,
     name: "Table Fixed Header",
     component: TableFixedHeaderPage,
+  },
+  {
+    id: 5,
+    name: "Table with Sum",
+    component: TableWithSumPage,
   },
 ];
 

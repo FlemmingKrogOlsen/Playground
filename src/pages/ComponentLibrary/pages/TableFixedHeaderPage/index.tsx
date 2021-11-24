@@ -3,7 +3,7 @@ import type { configType } from "../../../../components/TableFixedHeader/types";
 import { data } from "./data";
 
 const config: configType = {
-  maxRows: 5
+  maxRows: 4
 };
 
 const TableFixedHeaderPage = () => {
