@@ -30,9 +30,6 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  a {
-    text-decoration: none;
-  }
 `;
 
 export const BrandLink = styled(Link)`
@@ -62,7 +59,6 @@ export const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
   a {
-    text-decoration: none;
     color: white;
   }  
 `;

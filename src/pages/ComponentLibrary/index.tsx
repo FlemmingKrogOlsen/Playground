@@ -19,7 +19,6 @@ const QueryNavLink = ({ to, ...props }: LinkProps) => {
 const StyledNavLink = styled(NavLink)`
   display: block;
   margin: 1rem 0;
-  text-decoration: none;
   color: ${({ theme }) => theme.NAVMENU.INACTIVE};
   &.active {
     color: ${({ theme }) => theme.NAVMENU.ACTIVE};
