@@ -5,6 +5,7 @@ import InfoCardPage from "./pages/InfoCardPage";
 import DragNDropPage from "./pages/DragNDropPage";
 import TableFixedHeaderPage from "./pages/TableFixedHeaderPage";
 import TableWithSumPage from "./pages/TableWithSumPage";
+import FlipCardPage from "./pages/FlipCardPage";
 
 interface ComponentPage {
   id: number;
@@ -37,6 +38,11 @@ let componentPages: ComponentPage[] = [
     id: 5,
     name: "Table with Sum",
     component: TableWithSumPage,
+  },
+  {
+    id: 6,
+    name: "Flip Card",
+    component: FlipCardPage,
   },
 ];
 
