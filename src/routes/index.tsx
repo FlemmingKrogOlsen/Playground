@@ -4,7 +4,7 @@ import Layout from '../layout'
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Components, { ComponentsMainPage } from '../pages/ComponentLibrary';
-import PageTemplate from '../pages/ComponentLibrary/template';
+import PageTemplate from '../pages/ComponentLibrary/pageTemplate';
 
 import Error from './error'
 const error404 = "Error 404 : Page not found"
