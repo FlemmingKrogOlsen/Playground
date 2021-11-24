@@ -21,8 +21,8 @@ export const ProcentageRange = styled.input.attrs({
   background: white;
   outline: none;
   border-radius: 0.25rem;
-  margin-bottom: 10px;
   position: relative;
+  margin-top: 3px;
 
   &::-webkit-slider-thumb {
     appearance: none;
