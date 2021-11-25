@@ -35,11 +35,13 @@ export const ProcentageRange = styled.input.attrs({
 
   &::after {
     content: "${(props) => props.value}%";
-    color: black;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+      1px 1px 0 #fff;
     position: absolute;
-    top: 5px;
-    color: gray;
+    top: 2px;
     width: 100%;
     text-align: center;
+    font-weight: bold;
+    font-size: 1.25rem;
   }
 `;
