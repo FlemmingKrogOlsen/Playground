@@ -4,7 +4,9 @@ const colors = {
   primary: "#123456",
   secondary: "#ffffff",
   text: "#123456",
-  border: "#ccc",
+  headerText: "#ffffff",
+  border: "gray",
+  sliderBackground: "#eeeeee"
 };
 
 const Container = styled.div`
@@ -15,31 +17,36 @@ const Container = styled.div`
 
 const Header = styled.div`
   position: relative;
-  color: ${colors.text};
   text-align: center;
+  border-bottom: 5px solid ${colors.primary};
+  h2 {
+    position: relative;
+    z-index: 100;
+    color: ${colors.headerText};
+  }
 `;
 
 const Content = styled.div<{ height: number }>`
-  padding: 10px;
+  padding: 5px 10px;
   background: ${colors.secondary};
   color: ${colors.text};
   height: ${({ height }) => height}px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 20px;
-    background-color: ${colors.border};
+    background-color: ${colors.sliderBackground};
   }
   &::-webkit-scrollbar-thumb {
     background-color: ${colors.primary};
-    border-left: 6px solid ${colors.border};
-    border-right: 5px solid ${colors.border};
-    border-bottom: 5px solid ${colors.border};
+
   }
 `;
 
 const ProgressContainer = styled.div`
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: 5px;
+  height: 100%;
   background: ${colors.border};
 `;
 
@@ -52,15 +59,17 @@ const ProgressIndicator = styled.div.attrs<IProgress>((props) => ({
     width: props.progress + "%",
   },
 }))<IProgress>`
-  height: 5px;
+  height: 100%;
   background: ${colors.primary};
 `;
 
 const Procent = styled.div`
   position: absolute;
-  bottom: 5px;
-  right: 2px;
+  bottom: 2px;
+  right: 4px;
   font-size: 0.75rem;
+  z-index: 99;
+  color: ${colors.headerText};
   span {
     font-size: 0.5rem;
     font-weight: bold;
