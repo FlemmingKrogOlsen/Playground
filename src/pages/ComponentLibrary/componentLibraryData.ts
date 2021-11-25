@@ -8,6 +8,7 @@ import TableWithSumPage from "./pages/TableWithSumPage";
 import FlipCardPage from "./pages/FlipCardPage";
 import SectionProgressPage from "./pages/SectionProgressPage";
 import TabsPage from "./pages/TabsPage";
+import DetailsSummaryPage from "./pages/DetailsSummaryPage";
 
 interface ComponentPage {
   id: number;
@@ -55,6 +56,11 @@ let componentPages: ComponentPage[] = [
     id: 8,
     name: "Tabs",
     component: TabsPage,
+  },
+  {
+    id: 9,
+    name: "Details Summary",
+    component: DetailsSummaryPage,
   },
 ];
 
