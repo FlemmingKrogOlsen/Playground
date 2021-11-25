@@ -52,7 +52,7 @@ let componentPages: ComponentPage[] = [
   },
 ];
 
-export const getComponentPages = () => componentPages;
+export const getComponentPages = () => componentPages.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
 
 export const getComponentPage = (id: number) =>
   componentPages.find((page) => page.id === id);
