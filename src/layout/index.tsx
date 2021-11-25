@@ -8,7 +8,7 @@ const Layout = () => {
       <Header>
         <BrandLink to="/">PLAYGROUND</BrandLink>
         <nav>
-          <MenuLink to="/components">My Component Library</MenuLink>
+          <MenuLink to="/components">Collection of Component</MenuLink>
           <MenuLink to="/about">About</MenuLink>
         </nav>
       </Header>
