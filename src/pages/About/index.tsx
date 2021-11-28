@@ -42,7 +42,7 @@ const About = () => {
 
                     <tr>
                         <td>
-                            GH Pages (GitHub Pages - Deploy CI/CD)
+                            GH Pages
                         </td>
                         <td>v 3.2.3</td>
                         <td style={{ textAlign: "right" }}>
@@ -55,7 +55,7 @@ const About = () => {
             </table>
 
             <hr style={{ margin: "20px 0" }} />
-            npx create-react-app --template typescript<br />
+            npx create-react-app [app-name] --template typescript<br />
             npm install react-router-dom@6 history@5 @types/react-router-dom<br />
             npm install styled-components @types/styled-components<br />
             npm install gh-pages --save-dev<br />
