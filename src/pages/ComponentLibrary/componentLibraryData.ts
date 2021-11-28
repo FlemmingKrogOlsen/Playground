@@ -11,6 +11,7 @@ import TabsPage from "./pages/TabsPage";
 import DetailsSummaryPage from "./pages/DetailsSummaryPage";
 import AccordionPage from "./pages/Accordion";
 import SpinnersPage from "./pages/Spinners";
+import SectionPage from "./pages/SectionPage";
 
 interface ComponentPage {
   id: number;
@@ -73,6 +74,11 @@ let componentPages: ComponentPage[] = [
     id: 11,
     name: "Spinners",
     component: SpinnersPage,
+  },
+  {
+    id: 12,
+    name: "Section",
+    component: SectionPage,
   },
 ];
 
