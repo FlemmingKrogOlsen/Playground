@@ -9,6 +9,7 @@ import FlipCardPage from "./pages/FlipCardPage";
 import SectionProgressPage from "./pages/SectionProgressPage";
 import TabsPage from "./pages/TabsPage";
 import DetailsSummaryPage from "./pages/DetailsSummaryPage";
+import AccordionPage from "./pages/Accordion";
 
 interface ComponentPage {
   id: number;
@@ -61,6 +62,11 @@ let componentPages: ComponentPage[] = [
     id: 9,
     name: "Details Summary",
     component: DetailsSummaryPage,
+  },
+  {
+    id: 10,
+    name: "Accordion",
+    component: AccordionPage,
   },
 ];
 
