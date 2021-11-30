@@ -12,6 +12,7 @@ import DetailsSummaryPage from "./pages/DetailsSummaryPage";
 import AccordionPage from "./pages/Accordion";
 import SpinnersPage from "./pages/Spinners";
 import SectionPage from "./pages/SectionPage";
+import FormElements from "./pages/FormElements";
 
 interface ComponentPage {
   id: number;
@@ -79,6 +80,11 @@ let componentPages: ComponentPage[] = [
     id: 12,
     name: "Section",
     component: SectionPage,
+  },
+  {
+    id: 13,
+    name: "Form Elements",
+    component: FormElements,
   },
 ];
 
