@@ -14,6 +14,7 @@ import SpinnersPage from "./pages/Spinners";
 import SectionPage from "./pages/SectionPage";
 import FormElements from "./pages/FormElements";
 import ButtonsPage from "./pages/ButtonsPage";
+import CustomTablePage from "./pages/CustomTablePage";
 
 interface ComponentPage {
   id: number;
@@ -91,6 +92,11 @@ let componentPages: ComponentPage[] = [
     id: 14,
     name: "Buttons",
     component: ButtonsPage,
+  },
+  {
+    id: 15,
+    name: "Custom Table",
+    component: CustomTablePage,
   },
 ];
 
