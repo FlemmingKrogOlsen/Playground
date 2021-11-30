@@ -23,6 +23,7 @@ const Header = styled.div<IColor>`
   background: ${({ color }) => (color ? color : colors.primary)};
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 8px 10px 10px 10px;
 `;
 
