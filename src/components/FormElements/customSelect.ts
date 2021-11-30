@@ -7,8 +7,8 @@ const CustomSelect = styled.div`
     content: "▼";
     position: absolute;
     pointer-events: none;
-    right: 12px;
-    top: 5px;
+    right: 10px;
+    top: 3px;
     color: black;
     font-size: 16px;
     font-weight: 800;
