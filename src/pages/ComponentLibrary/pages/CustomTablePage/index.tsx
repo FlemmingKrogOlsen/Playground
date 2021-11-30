@@ -3,16 +3,13 @@ import styled from "styled-components";
 import { CustomTable } from "../../../../components/CustomTable";
 import Section from "../../../../components/Section";
 import Spinner from "../../../../components/Spinner";
+import isMobile from "../../../../helpers/isMobile";
 import { SpaceEvenly } from "../styled";
 
 import { data, headers } from "./data";
 
 const CustomTablePage = () => {
   const [sortBy, setSortBy] = useState<string>("name");
-
-  /*
-style={{ paddingRight: "5px", color: "#f4f4f4" }}
-  */
 
   const SortSelector = styled.div`
     b {
@@ -45,7 +42,7 @@ style={{ paddingRight: "5px", color: "#f4f4f4" }}
   };
 
   return (
-    <Section title="User Table" component={<Select />}>
+    <Section title="User Table" component={isMobile() ? "" : <Select />}>
       {data ? (
         <CustomTable
           headers={headers}
