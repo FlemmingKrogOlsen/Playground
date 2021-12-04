@@ -1,4 +1,4 @@
-## [Playground on GitHub Pages](https://flemmingkrogolsen.github.io/Playground/)
+## My Component Playground on GitHub Pages
 
 ### What was used?
 React Typescript  
