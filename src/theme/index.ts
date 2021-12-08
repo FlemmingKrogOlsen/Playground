@@ -1,5 +1,8 @@
+import media from './mediaQueries'
+
 // Theme
 export const theme = {
+  MEDIA: media,
   COLOR: {
     PRIMARY: "#123456",
     TEXT: "#ffffff",
