@@ -25,6 +25,9 @@ const Header = styled.div<IColor>`
   justify-content: space-between;
   align-items: center;
   padding: 8px 10px 10px 10px;
+  a {
+    color:  white;
+  }
 `;
 
 const Title = styled.div`
