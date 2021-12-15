@@ -6,7 +6,7 @@ import Error from "./error";
 import Home from "pages/Home";
 import About from "pages/About";
 import Components, { ComponentsMainPage } from "pages/ComponentLibrary";
-import PageTemplate from "pages/ComponentLibrary/pageTemplate";
+import PageLayout from "pages/ComponentLibrary/pageLayout";
 
 const Routing = () => (
   <BrowserRouter basename="/Playground">
@@ -16,7 +16,7 @@ const Routing = () => (
         <Route path="/about" element={<About />} />
         <Route path="/components" element={<Components />}>
           <Route index element={<ComponentsMainPage />} />
-          <Route path=":componentId" element={<PageTemplate />} />
+          <Route path=":componentId" element={<PageLayout />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Route>

@@ -3,7 +3,7 @@ import { useParams  } from "react-router-dom";
 import { getComponentPage  } from "./componentLibraryData";
 import {PageBanner} from './index'
 
-const PageTemplate = () => {
+const PageLayout = () => {
   let params = useParams();
   let page = getComponentPage(parseInt(params.componentId || "0", 10));
   
@@ -21,7 +21,7 @@ const PageTemplate = () => {
   );
 }
 
-export default PageTemplate;
+export default PageLayout;
 
 
 
