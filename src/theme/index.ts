@@ -6,6 +6,7 @@ export const theme = {
   COLOR: {
     PRIMARY: "#123456",
     TEXT: "#ffffff",
+    BACKGROUND: "#dedede"
   },
   NAVMENU: {
     ACTIVE: "#ffffff",

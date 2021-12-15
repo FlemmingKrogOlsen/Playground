@@ -1,22 +1,26 @@
 import styled from "styled-components";
 
 const Container = styled.main`
-    padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 90px);
 `;
 
-interface IProps {
-    title: string
-}
+const Text = styled.div`
+  padding: 1rem 2rem;
+  background: ${({ theme }) => theme.COLOR.BACKGROUND};
+  text-align: center;
+  border-radius: 0.5rem;
+`;
 
-const Error = ({ title }: IProps) => {
-    return (
-        <Container>
-            <h1>{title}</h1>
-            <p>
-                This is the error page. If you see this page, something went wrong.
-            </p>
-        </Container>
-    );
-}
+const Error = () => (
+  <Container>
+    <Text>
+      <h1>Page not Found</h1>
+      <p>status code 404</p>
+    </Text>
+  </Container>
+);
 
-export default Error
+export default Error;

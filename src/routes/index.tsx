@@ -7,7 +7,6 @@ import Components, { ComponentsMainPage } from '../pages/ComponentLibrary';
 import PageTemplate from '../pages/ComponentLibrary/pageTemplate';
 
 import Error from './error'
-const error404 = "Error 404 : Page not found"
 
 const Routing = () => {
   return (
@@ -20,7 +19,7 @@ const Routing = () => {
             <Route index element={<ComponentsMainPage />} />
             <Route path=":componentId" element={<PageTemplate />} />
           </Route>
-          <Route path="*" element={<Error title={error404} />} />
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </BrowserRouter>
