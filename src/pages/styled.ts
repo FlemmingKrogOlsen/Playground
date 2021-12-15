@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Main = styled.main`
     padding: 1rem;
     width: 100%;
-    background-color: white;
+    background-color: ${props => props.color ? props.color : '#fff'};
     height: calc(100vh - 170px); // 90 + 48 + 16 + 16 = 170 (( Header + Footer + MarginTop + MarginBottom ))
     margin: 1rem 0;
     overflow-y: auto;
