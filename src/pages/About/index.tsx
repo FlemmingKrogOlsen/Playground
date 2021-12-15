@@ -1,4 +1,4 @@
-import { Main } from "pages/styled";
+import { Main } from "layout/styled";
 
 const About = () => (
   <Main>

@@ -5,8 +5,8 @@ import Error from "./error";
 
 import Home from "pages/Home";
 import About from "pages/About";
-import Components, { ComponentsMainPage } from "pages/ComponentLibrary";
-import PageLayout from "pages/ComponentLibrary/pageLayout";
+import Components from "pages/ComponentLibrary";
+import {PageLayout, ComponentsMainPage} from "pages/ComponentLibrary/pageLayout";
 
 const Routing = () => (
   <BrowserRouter basename="/Playground">
