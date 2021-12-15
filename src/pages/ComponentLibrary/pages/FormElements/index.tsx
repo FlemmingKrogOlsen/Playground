@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
-import Form from "../../../../components/FormElements";
-import Buttons from "../../../../components/FormElements/buttonsContainer";
-import CustomCheckbox from "../../../../components/FormElements/customCheckbox";
-import CustomRadio from "../../../../components/FormElements/customRadio";
-import CustomSelect from "../../../../components/FormElements/customSelect";
-import { CodeBlock, Editor } from "../styled";
+import Form from "components/FormElements";
+import Buttons from "components/FormElements/buttonsContainer";
+import CustomCheckbox from "components/FormElements/customCheckbox";
+import CustomRadio from "components/FormElements/customRadio";
+import CustomSelect from "components/FormElements/customSelect";
+import { CodeBlock, Editor } from "../pages.styled";
 
 let renderCount = 0;
 
@@ -155,9 +155,11 @@ const FormElements = () => {
       </Form>
       <Editor>
         <h2>Form submit data</h2>
-        <h3 style={{marginBottom: "10px"}}>(react-hook-form)</h3>
-      <CodeBlock>
-        <pre style={{fontSize: "10px"}}>{JSON.stringify(watch(), null, 2)}</pre>
+        <h3 style={{ marginBottom: "10px" }}>(react-hook-form)</h3>
+        <CodeBlock>
+          <pre style={{ fontSize: "10px" }}>
+            {JSON.stringify(watch(), null, 2)}
+          </pre>
         </CodeBlock>
       </Editor>
     </div>

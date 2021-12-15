@@ -1,5 +1,5 @@
-import FlipCard from "../../../../components/FlipCard";
-import { SpaceEvenly } from "../styled";
+import FlipCard from "components/FlipCard";
+import { SpaceEvenly } from "../pages.styled";
 
 const FlipCardPage = () => (
   <SpaceEvenly>

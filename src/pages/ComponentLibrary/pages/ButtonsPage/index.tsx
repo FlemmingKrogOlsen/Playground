@@ -1,6 +1,6 @@
-import Button from "../../../../components/Button/";
-import ButtonLink from "../../../../components/Button/btnLink";
-import { SpaceEvenly } from "../styled";
+import Button from "components/Button/";
+import ButtonLink from "components/Button/btnLink";
+import { SpaceEvenly } from "../pages.styled";
 
 const Icon = () => (
   <svg

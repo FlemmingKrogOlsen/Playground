@@ -1,27 +1,26 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { CustomTable } from "../../../../components/CustomTable";
-import Section from "../../../../components/Section";
-import Spinner from "../../../../components/Spinner";
-import isMobile from "../../../../helpers/isMobile";
-import { SpaceEvenly } from "../styled";
-
+import { CustomTable } from "components/CustomTable";
+import Section from "components/Section";
+import Spinner from "components/Spinner";
+import isMobile from "helpers/isMobile";
+import { SpaceEvenly } from "../pages.styled";
 import { data, headers } from "./data";
+
+const SortSelector = styled.div`
+  b {
+    padding-right: 5px;
+    color: white;
+  }
+  select {
+    color: black;
+    border-radius: 7px;
+    padding: 2px 0px;
+  }
+`;
 
 const CustomTablePage = () => {
   const [sortBy, setSortBy] = useState<string>("name");
-
-  const SortSelector = styled.div`
-    b {
-      padding-right: 5px;
-      color: white;
-    }
-    select {
-      color: black;
-      border-radius: 7px;
-      padding: 2px 0px;
-    }
-  `;
 
   const Select = () => {
     return (

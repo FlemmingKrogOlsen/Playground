@@ -1,5 +1,5 @@
-import { SpaceEvenly } from "../styled";
-import SectionProgress from "../../../../components/SectionProgress";
+import { SpaceEvenly } from "../pages.styled";
+import SectionProgress from "components/SectionProgress";
 
 const SectionProgressPage = () => {
   return (

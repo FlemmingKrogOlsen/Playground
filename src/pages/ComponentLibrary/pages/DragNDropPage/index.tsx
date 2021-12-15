@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { DragNDrop } from "../../../../components";
-import { Editor, CodeBlock } from "../styled";
+import DragNDrop from "components/DragNDrop";
+import { Editor, CodeBlock } from "../pages.styled";
 import { initial_state } from "./data";
 
 const DragNDropPage = () => {
@@ -10,10 +10,11 @@ const DragNDropPage = () => {
       <DragNDrop list={data} onListChange={setData} groupWidth={200} />
       <Editor>
         <CodeBlock>
-        <pre style={{fontSize: "10px"}}>{JSON.stringify(data, null, 2)}</pre>
+          <pre style={{ fontSize: "10px" }}>
+            {JSON.stringify(data, null, 2)}
+          </pre>
         </CodeBlock>
       </Editor>
-      
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { InfoCard } from "../../../../components/";
+import InfoCard from "components/InfoCard";
 
 const InfoCardPage = () => (
   <InfoCard header="InfoCard Title">

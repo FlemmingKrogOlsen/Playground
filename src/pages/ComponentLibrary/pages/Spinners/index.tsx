@@ -1,5 +1,5 @@
-import Spinner from "../../../../components/Spinner";
-import { SpaceEvenly } from "../styled";
+import Spinner from "components/Spinner";
+import { SpaceEvenly } from "../pages.styled";
 
 const SpinnersPage = () => (
   <SpaceEvenly>

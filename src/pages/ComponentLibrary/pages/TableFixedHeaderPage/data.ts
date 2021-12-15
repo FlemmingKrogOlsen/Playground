@@ -1,4 +1,4 @@
-import type { tableDataType } from "../../../../components/TableFixedHeader/types";
+import type { tableDataType } from "components/TableFixedHeader/types";
 
 export const data: tableDataType = {
   headers: ["Make", "Model", "Color", "Year"],

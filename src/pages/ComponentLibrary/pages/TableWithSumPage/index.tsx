@@ -1,4 +1,4 @@
-import TableWithSum from "../../../../components/TableSum";
+import TableWithSum from "components/TableSum";
 import { TableWithSum_data } from "./TableWithSum_data";
 
 const TableWithSumPage = () => (

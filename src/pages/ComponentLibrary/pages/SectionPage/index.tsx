@@ -1,4 +1,4 @@
-import Section from "../../../../components/Section";
+import Section from "components/Section";
 
 const SectionPage = () => (
   <Section border shadow title="Section Title">
