@@ -4,7 +4,7 @@ import Buttons from "components/FormElements/buttonsContainer";
 import CustomCheckbox from "components/FormElements/customCheckbox";
 import CustomRadio from "components/FormElements/customRadio";
 import CustomSelect from "components/FormElements/customSelect";
-import { CodeBlock, Editor } from "../pages.styled";
+import { EditorItem, Editor } from "../pages.styled";
 
 let renderCount = 0;
 
@@ -156,11 +156,11 @@ const FormElements = () => {
       <Editor>
         <h2>Form submit data</h2>
         <h3 style={{ marginBottom: "10px" }}>(react-hook-form)</h3>
-        <CodeBlock>
+        <EditorItem>
           <pre style={{ fontSize: "10px" }}>
             {JSON.stringify(watch(), null, 2)}
           </pre>
-        </CodeBlock>
+        </EditorItem>
       </Editor>
     </div>
   );

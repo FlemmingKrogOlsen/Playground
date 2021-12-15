@@ -13,7 +13,7 @@ export const Editor = styled.div`
   border-radius: 0.5rem;
 `;
 
-export const CodeBlock = styled.div`
+export const EditorItem = styled.div`
   background: ${({ theme }) => theme.COLOR.BACKGROUND};
   color: ${({ theme }) => theme.COLOR.PRIMARY};
   padding: 10px;
