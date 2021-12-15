@@ -34,7 +34,7 @@ export const Header = styled.header`
 
 export const BrandLink = styled(Link)`
   font-size: 3rem;
-  color: white;
+  color: ${({ theme }) => theme.COLOR.TEXT};
   font-weight: 700;
 `;
 
@@ -46,8 +46,13 @@ export const MenuLink = styled(NavLink)`
     color: ${({ theme }) => theme.NAVMENU.ACTIVE};
   }
   &:not(:first-child) {
-    margin-left: 1rem;
+    margin-left: 1.5rem;
   }
+`;
+
+export const MainContent = styled.div<{ maxWidth: number }>`
+  max-width: ${({ maxWidth }) => maxWidth}px;
+  margin: auto;
 `;
 
 export const Footer = styled.footer`
@@ -58,14 +63,8 @@ export const Footer = styled.footer`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   a {
-    color: white;
-  }  
-`;
-
-
-
-export const MainContent = styled.div<{ maxWidth: number }>`
-  max-width: ${({ maxWidth }) => maxWidth}px;
-  margin: auto;
+    color: ${({ theme }) => theme.COLOR.TEXT};
+  }
 `;
