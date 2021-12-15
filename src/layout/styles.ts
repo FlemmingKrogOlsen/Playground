@@ -63,14 +63,7 @@ export const Footer = styled.footer`
   }  
 `;
 
-export const Image = styled.img`
-  margin-left: 0.5rem;
-  display: inline-block;
-  vertical-align: middle;
-  &:hover {
-    filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.75));
-  }
-`;
+
 
 export const MainContent = styled.div<{ maxWidth: number }>`
   max-width: ${({ maxWidth }) => maxWidth}px;
