@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
   position: relative;
-
   nav {
     position: absolute;
     top: 0;
@@ -11,6 +10,7 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.COLOR.PRIMARY};
     padding: 5px;
     border-radius: 0.5rem;
+    width: 250px;
     a {
       padding: 0 0.5rem;
     }
@@ -22,9 +22,9 @@ export const Input = styled.input`
   border-radius: 0.25rem;
   border: none;
   outline: none;
-  width: 250px;
-  background-color: #f3f3f3;
-  color: gray;
+  width: 100%;
+  background-color: ${({ theme }) => theme.COLOR.BACKGROUND};
+  color: ${({ theme }) => theme.COLOR.PRIMARY};
 
   &:focus-visible {
     font-weight: bold;

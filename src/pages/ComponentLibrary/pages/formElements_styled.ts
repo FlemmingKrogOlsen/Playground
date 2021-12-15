@@ -3,9 +3,9 @@ import styled, { css } from "styled-components";
 const commonInputCss = css`
   width: 25px;
   height: 25px;
-  background: #123456;
+  background: ${({ theme }) => theme.COLOR.PRIMARY};
   cursor: pointer;
-  border: 2px solid white;
+  border: 2px solid ${({ theme }) => theme.COLOR.BACKGROUND};
   border-radius: 25%;
 `;
 
@@ -18,7 +18,7 @@ export const ProcentageRange = styled.input.attrs({
   -webkit-appearance: none;
   width: 100%;
   height: 25px;
-  background: white;
+  background: ${({ theme }) => theme.COLOR.BACKGROUND};
   outline: none;
   border-radius: 0.25rem;
   position: relative;

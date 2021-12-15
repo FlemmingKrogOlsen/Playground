@@ -7,16 +7,15 @@ export const Editor = styled.div`
   width: 250px;
   margin: 0 auto;
   padding: 10px;
-  border: 1px solid gray;
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.COLOR.TEXT};
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   border-radius: 0.5rem;
 `;
 
 export const CodeBlock = styled.div`
-  background: white;
-  color: black;
+  background: ${({ theme }) => theme.COLOR.BACKGROUND};
+  color: ${({ theme }) => theme.COLOR.PRIMARY};
   padding: 10px;
   border-radius: 0.25rem;
   text-align: left;

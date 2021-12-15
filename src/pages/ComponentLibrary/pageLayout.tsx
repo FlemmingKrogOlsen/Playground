@@ -8,7 +8,7 @@ const PageBanner = styled.header`
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   padding: 1rem;
   width: 100%;
-  color: white;
+  color: ${({ theme }) => theme.COLOR.TEXT};
   margin-bottom: 10px;
 `;
 

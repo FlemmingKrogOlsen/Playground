@@ -10,6 +10,7 @@ const Container = styled.main`
 const Text = styled.div`
   padding: 1rem 2rem;
   background: ${({ theme }) => theme.COLOR.BACKGROUND};
+  color: ${({ theme }) => theme.COLOR.PRIMARY};
   text-align: center;
   border-radius: 0.5rem;
 `;
