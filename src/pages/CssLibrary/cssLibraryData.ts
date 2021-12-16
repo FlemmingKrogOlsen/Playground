@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import BlankPage from "./pages/Blank";
+import FlexBoxPage from "./pages/FlexDirection";
 
 interface ComponentPage {
   id: number;
@@ -11,6 +12,11 @@ interface ComponentPage {
 let componentPages: ComponentPage[] = [
   {
     id: 1,
+    name: "flex-direction",
+    component: FlexBoxPage,
+  },
+  {
+    id: 2,
     name: "Blank Page",
     component: BlankPage,
   },
