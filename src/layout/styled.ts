@@ -62,7 +62,7 @@ export const Header = styled.header`
 `;
 
 export const BrandLink = styled(Link)`
-  font-size: 3rem;
+  font-size: 3.25rem;
   color: ${({ theme }) => theme.COLOR.TEXT};
   font-weight: 700;
 `;
