@@ -1,5 +1,5 @@
 import FlipCard from "components/FlipCard";
-import { SpaceEvenly } from "../pages.styled";
+import { SpaceEvenly } from "layout/nested.pages";
 
 const FlipCardPage = () => (
   <SpaceEvenly>

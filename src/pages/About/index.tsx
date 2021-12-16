@@ -1,4 +1,4 @@
-import { Main } from "layout/styled";
+import { Main } from "layout/nested.styled";
 
 const About = () => (
   <Main>

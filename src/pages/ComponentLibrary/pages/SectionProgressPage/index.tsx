@@ -1,5 +1,5 @@
-import { SpaceEvenly } from "../pages.styled";
 import SectionProgress from "components/SectionProgress";
+import { SpaceEvenly } from "layout/nested.pages";
 
 const SectionProgressPage = () => {
   return (

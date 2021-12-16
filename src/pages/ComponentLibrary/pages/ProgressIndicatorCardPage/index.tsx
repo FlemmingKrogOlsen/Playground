@@ -1,6 +1,6 @@
 import ProgressPieCard, { defaultColors } from "components/ProgressPieCard";
+import { SpaceEvenly, Editor } from "layout/nested.pages";
 import { useState } from "react";
-import { Editor, SpaceEvenly } from "../pages.styled";
 import { ProcentageRange } from "../formElements_styled";
 
 const ProgressIndicatorCardPage = () => {

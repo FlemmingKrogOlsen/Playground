@@ -1,6 +1,6 @@
-import { Main } from "layout/styled";
 import styled from "styled-components";
 import FlipCard from "components/FlipCard";
+import { Main } from "layout/nested.styled";
 
 const Container = styled.div`
   display: flex;

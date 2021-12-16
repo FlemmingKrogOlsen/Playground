@@ -1,5 +1,5 @@
 import Spinner from "components/Spinner";
-import { SpaceEvenly } from "../pages.styled";
+import { SpaceEvenly } from "layout/nested.pages";
 
 const SpinnersPage = () => (
   <SpaceEvenly>

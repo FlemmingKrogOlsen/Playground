@@ -4,7 +4,7 @@ import Buttons from "components/FormElements/buttonsContainer";
 import CustomCheckbox from "components/FormElements/customCheckbox";
 import CustomRadio from "components/FormElements/customRadio";
 import CustomSelect from "components/FormElements/customSelect";
-import { EditorItem, Editor } from "../pages.styled";
+import { Editor, EditorItem } from "layout/nested.pages";
 
 let renderCount = 0;
 

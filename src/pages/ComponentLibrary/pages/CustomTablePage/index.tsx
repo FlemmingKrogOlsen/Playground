@@ -4,8 +4,8 @@ import { CustomTable } from "components/CustomTable";
 import Section from "components/Section";
 import Spinner from "components/Spinner";
 import isMobile from "helpers/isMobile";
-import { SpaceEvenly } from "../pages.styled";
 import { data, headers } from "./data";
+import { SpaceEvenly } from "layout/nested.pages";
 
 const SortSelector = styled.div`
   b {

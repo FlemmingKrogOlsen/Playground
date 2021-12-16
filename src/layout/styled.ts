@@ -3,9 +3,9 @@ import styled, { css } from "styled-components";
 
 const headerHeight: number = 96;
 const footerHeight: number = 48;
-const contentMarginTopBottom: number = 16;
+export const contentMarginTopBottom: number = 16;
 
-const reduceSize: number =
+export const reduceSize: number =
   headerHeight + footerHeight + 2 * contentMarginTopBottom;
 
 const bars = css`
@@ -26,27 +26,6 @@ const bars = css`
 
   &::after {
     bottom: 16px;
-  }
-`;
-
-const scrollBarsCSS = css`
-  overflow-y: auto;
-
-  // Firefox scrollbar support
-  scrollbar-color: ${({ theme }) => theme.COLOR.PRIMARY} transparent;
-  scrollbar-width: thin;
-
-  // Webkit scrollbar support
-  &::-webkit-scrollbar {
-    width: 1rem;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      ${({ theme }) => theme.COLOR.PRIMARY},
-      rgba(18, 52, 86, 0.5)
-    );
-    border-radius: 0.5rem;
-    border: 2px solid ${({ theme }) => theme.COLOR.BACKGROUND};
   }
 `;
 
@@ -76,10 +55,10 @@ export const MenuLink = styled(NavLink)`
   }
   &:not(:first-child) {
     margin-left: 1.5rem;
-  };
+  }
   &:hover {
     color: ${({ theme }) => theme.NAVMENU.HOVER};
-  };
+  }
 `;
 
 export const MainContent = styled.div<{ maxWidth: number }>`
@@ -100,15 +79,4 @@ export const Footer = styled.footer`
   a {
     color: ${({ theme }) => theme.COLOR.TEXT};
   }
-`;
-
-export const Main = styled.main`
-  padding: ${contentMarginTopBottom}px;
-  width: 100%;
-  background-color: ${(props) =>
-    props.color ? props.color : props.theme.COLOR.BACKGROUND};
-  height: calc(100vh - ${reduceSize}px);
-  margin: 1rem 0;
-  border-radius: 0.5rem;
-  ${scrollBarsCSS};
 `;

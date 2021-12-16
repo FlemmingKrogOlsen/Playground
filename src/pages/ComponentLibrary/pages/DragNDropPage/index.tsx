@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DragNDrop from "components/DragNDrop";
-import { Editor, EditorItem } from "../pages.styled";
 import { initial_state } from "./data";
+import { Editor, EditorItem } from "layout/nested.pages";
 
 const DragNDropPage = () => {
   const [data, setData] = useState(initial_state);

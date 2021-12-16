@@ -1,8 +1,8 @@
 import { Outlet, useSearchParams, useLocation } from "react-router-dom";
 import { getCssPages } from "./cssLibraryData";
 import type { LinkProps } from "react-router-dom";
-import { Main } from "layout/styled";
-import { StyledNavLink, Container, Input } from "./index.styled";
+import { Main } from "layout/nested.styled";
+import { StyledNavLink, Container, Input } from "layout/nested.styled";
 
 const QueryNavLink = ({ to, ...props }: LinkProps) => {
   let location = useLocation();
