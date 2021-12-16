@@ -37,7 +37,10 @@ export const StyledNavLink = styled(NavLink)`
   color: ${({ theme }) => theme.NAVMENU.INACTIVE};
   &.active {
     color: ${({ theme }) => theme.NAVMENU.ACTIVE};
-  }
+  };
+  &:hover {
+    color: ${({ theme }) => theme.NAVMENU.HOVER};
+  };
 `;
 
 

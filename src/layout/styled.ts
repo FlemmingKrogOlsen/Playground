@@ -76,7 +76,10 @@ export const MenuLink = styled(NavLink)`
   }
   &:not(:first-child) {
     margin-left: 1.5rem;
-  }
+  };
+  &:hover {
+    color: ${({ theme }) => theme.NAVMENU.HOVER};
+  };
 `;
 
 export const MainContent = styled.div<{ maxWidth: number }>`
