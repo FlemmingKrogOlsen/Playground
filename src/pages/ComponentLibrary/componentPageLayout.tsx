@@ -12,7 +12,7 @@ const PageBanner = styled.header`
   margin-bottom: 10px;
 `;
 
-export const PageLayout = () => {
+export const ComponentPageLayout = () => {
   let params = useParams();
   let page = getComponentPage(parseInt(params.componentId || "0", 10));
 

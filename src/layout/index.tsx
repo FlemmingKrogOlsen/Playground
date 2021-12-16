@@ -14,6 +14,7 @@ const Layout = () => (
       <BrandLink to="/">PLAYGROUND</BrandLink>
       <nav>
         <MenuLink to="/components">Collection of Component</MenuLink>
+        <MenuLink to="/css">CSS Explained</MenuLink>
         <MenuLink to="/about">About</MenuLink>
       </nav>
     </Header>
