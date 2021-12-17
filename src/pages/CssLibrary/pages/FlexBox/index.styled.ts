@@ -27,8 +27,13 @@ export const Box = styled.div<{
   font-size: 1.25rem;
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   color: ${({ theme }) => theme.COLOR.TEXT};
-  &:nth-child(1) { flex-direction: row }  
-  &:nth-child(2) { flex-direction: column } }  
+
+  &:nth-child(2) {
+    flex-direction: column;
+  }
+  &:nth-child(3) {
+    flex-direction: row;
+  }
 `;
 
 export const InputField = styled.div`
@@ -53,7 +58,7 @@ export const InputField = styled.div`
     border: none;
     outline: none;
   }
-  
+
   input {
     margin-right: 3px;
     padding-left: 5px;
