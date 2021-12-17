@@ -5,6 +5,7 @@ export const Url = styled.a.attrs({
   rel: "noreferrer",
 })`
   font-weight: bold;
+  color: ${({ theme }) => theme.COLOR.TEXT};
   &:before {
     content: "🔗";
     margin-right: 5px;
@@ -12,16 +13,7 @@ export const Url = styled.a.attrs({
   }
 `;
 
-export const Box = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  font-size: 1.25rem;
-  background: ${({ theme }) => theme.COLOR.PRIMARY};
-  color: ${({ theme }) => theme.COLOR.TEXT};
-`;
+
 
 export enum infoTypes {
   success = "success",

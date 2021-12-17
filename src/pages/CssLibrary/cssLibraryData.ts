@@ -12,7 +12,7 @@ interface ComponentPage {
 let componentPages: ComponentPage[] = [
   {
     id: 1,
-    name: "flex-direction",
+    name: "Flexbox",
     component: FlexBoxPage,
   },
   {

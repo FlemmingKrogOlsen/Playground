@@ -1,57 +1,44 @@
 import { useState } from "react";
 import Section from "components/Section";
+import { Box, Container } from "./index.styled";
+import { Info, infoTypes, Editor, EditorItem } from "layout/nested.pages";
+import Select from "nestedComponents/Select";
+import MDNLink from "nestedComponents/MDNLink";
+import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 
-// import CheckCSSSupport from "components/CheckCSSSupport";
-import { Container } from "./index.styled";
-import {
-  Box,
-  Url,
-  Info,
-  infoTypes,
-  Editor,
-  EditorItem,
-} from "layout/nested.pages";
-
-const options: string[] = ["row", "row-reverse", "column", "column-reverse"];
+const flexDirections: string[] = ["row", "row-reverse", "column", "column-reverse"];
 
 const FlexBoxPage = () => {
+  const title = "flex-direction";
   const [direction, setDirection] = useState<string>("row");
+  const [gap, setGap] = useState<number>(5);
 
-  const testThis = `flex-direction: ${direction}`;
+  const cssString = `.container {
+  display: flex;
+  flex-direction: ${direction};
+  gap: ${gap}px;
+}
 
-  const Select = () => (
-    <select value={direction} onChange={(e) => setDirection(e.target.value)}>
-      {options.map((item) => (
-        <option key={item} value={item}>
-          {item}
-        </option>
-      ))}
-    </select>
-  );
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+`;
 
   return (
     <>
-      <Section border shadow title={testThis} component={<Select />}>
-        <Container direction={direction}>
-          <Box>Item # 1</Box>
-          <Box>Item # 2</Box>
-          <Box>Item # 3</Box>
+      {/* flexx-direction */}
+      <Section border shadow title="Preview Window">
+        <Container direction={direction} gap={gap}>
+          <Box>Box #1</Box>
+          <Box>Box #2</Box>
+          <Box>Box #3</Box>
         </Container>
       </Section>
 
-      <Section
-        border
-        shadow
-        title="did you know..."
-        component={
-          <Url href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction">
-            MDN Web
-          </Url>
-        }
-      >
-        {/* <Text>
-          <b>column-reverse</b> and <b>row-reverse</b> was bad for accessibility
-        </Text> */}
+      {/* Additional info... */}
+      <Section border shadow title="Additional info...">
         {(direction === "row-reverse" || direction === "column-reverse") && (
           <Info type={infoTypes.danger}>
             <h3>Accessibility concerns</h3>
@@ -66,13 +53,23 @@ const FlexBoxPage = () => {
         )}
       </Section>
 
+      {/* Editor */}
       <Editor>
+        flex-direction:
+        <Select
+          value={direction}
+          onChange={(e) => setDirection(e.target.value)}
+          options={flexDirections}
+        />
+gap:
+          <input type="number" value={gap} onChange={(e) => setGap(Number(e.target.value))} />
+
         <EditorItem>
-          display: flex;
-          <br />
-          flex-direction: <b>{direction}</b>;<br />
-          {/* <CheckCSSSupport test={testThis} /> */}
+          <pre>{cssString}</pre>
         </EditorItem>
+        <ButtonCopyClipboard text={cssString} />
+        <br />
+        {title} : <MDNLink title={title} />
       </Editor>
     </>
   );
