@@ -1,6 +1,9 @@
 import Button from "components/Button/";
 import ButtonLink from "components/Button/btnLink";
-import { SpaceEvenly } from "layout/nested.pages";
+import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
+import { PageBanner, SpaceEvenly } from "layout/nested.pages";
+
+const text = "Hello World";
 
 const Icon = () => (
   <svg
@@ -21,18 +24,26 @@ const Icon = () => (
 );
 
 const ButtonsPage = () => (
-  <SpaceEvenly>
-    <Button
-      title="Button"
-      icon={<Icon />}
-      onClick={() => alert("Clicked Botton")}
-    />
-    <ButtonLink
-      title="ButtonLink"
-      icon={<Icon />}
-      url="https://startpage.krogolsen.dk/"
-    />
-  </SpaceEvenly>
+  <>
+    <SpaceEvenly>
+      <Button
+        title="Button"
+        icon={<Icon />}
+        onClick={() => alert("Clicked Botton")}
+      />
+      <ButtonLink
+        title="ButtonLink"
+        icon={<Icon />}
+        url="https://startpage.krogolsen.dk/"
+      />
+    </SpaceEvenly>
+    <br />
+    <br />
+    <PageBanner>Special Buttons</PageBanner>
+    <SpaceEvenly>
+      <ButtonCopyClipboard text={text} />
+    </SpaceEvenly>
+  </>
 );
 
 export default ButtonsPage;

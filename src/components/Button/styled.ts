@@ -13,16 +13,16 @@ const shadowActive = "rgba(0, 0, 0, 0.3) 0px 5px 10px 0px, rgba(0, 0, 0, 0.3) 0p
 
 const commonStyle = css`
   svg {
-    height: 2rem;
+    height: 1.5rem;
     vertical-align:middle;
-    margin-right: 10px;
+    margin-right: 2px;
   }
 
   display: inline-block;
   position: relative;
   border: 2px solid #123456;
   border-radius: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: ${colors.BLACK};
   background: ${colors.COMPONENT_BACKGROUND};
   padding: 5px 10px 5px 7px;
