@@ -7,6 +7,7 @@ interface ComponentPage {
   id: number;
   name: string;
   component: FC;
+  tags: string[] // keep tags lowercase
 }
 
 let componentPages: ComponentPage[] = [
@@ -14,11 +15,13 @@ let componentPages: ComponentPage[] = [
     id: 1,
     name: "FlexBox",
     component: FlexBoxPage,
+    tags: ["flexbox","display: flex", "flex-direction", "gap", "align-items", "justify-content"],
   },
   {
     id: 2,
     name: "Blank Page",
     component: BlankPage,
+    tags: ["blank","page"],
   },
 ];
 

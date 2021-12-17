@@ -33,11 +33,18 @@ const CSS = () => {
           .filter((page) => {
             let filter = searchParams.get("filter");
             if (!filter) return true;
-            let name = page.name.toLowerCase();
-            return name.includes(filter.toLowerCase());
+            return (
+              page.tags.findIndex((element) =>
+                // @ts-ignore // filter can be empty/blank/null
+                element.includes(filter.toLowerCase())
+              ) >= 0
+            );
+            // this code will search in 'name' instead of 'tags'
+            // let name = page.name.toLowerCase();
+            // return name.includes(filter.toLowerCase());
           })
           .map((page) => (
-            <QueryNavLink to={`/css/${page.id}`} key={page.id}>
+            <QueryNavLink to={`/css/${page.id}`} key={page.id} title={"Searchable tags :\n\r" + page.tags.join("\n")}>
               {page.name}
             </QueryNavLink>
           ))}
