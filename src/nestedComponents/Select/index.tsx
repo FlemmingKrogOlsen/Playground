@@ -4,14 +4,15 @@ type SelectObject = {
 };
 
 interface SelectProps {
+  id: string;
   value: string;
   options: any[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Select = ({ value, onChange, options }: SelectProps) => {
+const Select = ({ id, value, onChange, options }: SelectProps) => {
   return (
-    <select value={value} onChange={onChange}>
+    <select value={value} onChange={onChange} id={id}>
       {typeof options[0] === "object"
         ? options.map((item: SelectObject) => (
             <option key={item.value} value={item.value}>
