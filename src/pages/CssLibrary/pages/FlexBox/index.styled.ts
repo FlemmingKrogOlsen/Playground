@@ -36,34 +36,7 @@ export const Box = styled.div<{
   }
 `;
 
-export const InputField = styled.div`
-  display: flex;
-  margin-bottom: 10px;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  color: #123456;
-  font-size: 0.75rem;
-  background: white;
 
-  label {
-    background: lightgray;
-    width: 50%;
-    text-align: left;
-    padding: 5px 5px 5px 10px;
-  }
-
-  input,
-  select {
-    width: 50%;
-    border: none;
-    outline: none;
-  }
-
-  input {
-    margin-right: 3px;
-    padding-left: 5px;
-  }
-`;
 
 export const Text = styled.div`
   display: flex;

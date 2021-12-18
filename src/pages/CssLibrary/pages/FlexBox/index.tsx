@@ -1,7 +1,13 @@
 import { useState } from "react";
 import Section from "components/Section";
-import { Box, Container, InputField, Text, TextInfo } from "./index.styled";
-import { Info, infoTypes, Editor, EditorItem } from "layout/nested.pages";
+import { Box, Container, Text, TextInfo } from "./index.styled";
+import {
+  Info,
+  infoTypes,
+  Editor,
+  EditorItem,
+  InputField,
+} from "layout/nested.pages";
 import Select from "nestedComponents/Select";
 import MDNLink from "nestedComponents/MDNLink";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
@@ -59,7 +65,6 @@ const FlexBoxPage = () => {
 
   return (
     <>
-      {/* flex-direction */}
       <Section border shadow title="Preview Window">
         <Container direction={direction} gap={gap}>
           <Box align={align} justify={justify}>
@@ -83,13 +88,12 @@ const FlexBoxPage = () => {
         </Container>
       </Section>
 
-      {/* Additional info... */}
-      <Section border shadow title="Additional info...">
-        <Info type={infoTypes.info}>
-          flex-direction: {direction}, then justify-content ={" "}
-          {direction.includes("row") ? "X" : "Y"} and align-items ={" "}
-          {direction.includes("row") ? "Y" : "X"} .
-        </Info>
+      <Section
+        border
+        shadow
+        title="flex-direction"
+        component={<MDNLink title="flex-direction" />}
+      >
         {(direction === "row-reverse" || direction === "column-reverse") && (
           <Info type={infoTypes.danger}>
             <h3>Accessibility concerns</h3>
@@ -104,7 +108,28 @@ const FlexBoxPage = () => {
         )}
       </Section>
 
-      {/* Editor */}
+      <Section border shadow title="gap" component={<MDNLink title="gap" />}>
+        <div />
+      </Section>
+
+      <Section
+        border
+        shadow
+        title="justify-content"
+        component={<MDNLink title="justify-content" />}
+      >
+        <div />
+      </Section>
+
+      <Section
+        border
+        shadow
+        title="align-items"
+        component={<MDNLink title="align-items" />}
+      >
+        <div />
+      </Section>
+
       <Editor>
         <InputField>
           <label htmlFor="direction">flex-direction</label>
@@ -146,8 +171,6 @@ const FlexBoxPage = () => {
           <pre>{cssString}</pre>
         </EditorItem>
         <ButtonCopyClipboard text={cssString} />
-        <br />
-        flex-direction : <MDNLink title="flex-direction" />
       </Editor>
     </>
   );
