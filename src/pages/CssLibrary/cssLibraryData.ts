@@ -1,13 +1,15 @@
 import { FC } from "react";
 
-import BlankPage from "./pages/Blank";
+import BorderPage from "./pages/Border";
 import FlexBoxPage from "./pages/FlexBox";
+import FontPage from "./pages/Font";
+import TextAlignPage from "./pages/TextAlign";
 
 interface ComponentPage {
   id: number;
   name: string;
   component: FC;
-  tags: string[] // keep tags lowercase
+  tags: string[]; // keep tags lowercase
 }
 
 let componentPages: ComponentPage[] = [
@@ -15,13 +17,38 @@ let componentPages: ComponentPage[] = [
     id: 1,
     name: "FlexBox",
     component: FlexBoxPage,
-    tags: ["flexbox","display: flex", "flex-direction", "gap", "align-items", "justify-content"],
+    tags: [
+      "flexbox",
+      "display: flex",
+      "flex-direction",
+      "gap",
+      "justify-content",
+      "align-items",
+    ],
   },
   {
     id: 2,
-    name: "Blank Page",
-    component: BlankPage,
-    tags: ["blank","page"],
+    name: "Border",
+    component: BorderPage,
+    tags: [
+      "border",
+      "border-color",
+      "border-style",
+      "border-width",
+      "border-radius",
+    ],
+  },
+  {
+    id: 3,
+    name: "Text Align",
+    component: TextAlignPage,
+    tags: ["text-align"],
+  },
+  {
+    id: 4,
+    name: "Font",
+    component: FontPage,
+    tags: ["font-size", "font-weight"],
   },
 ];
 

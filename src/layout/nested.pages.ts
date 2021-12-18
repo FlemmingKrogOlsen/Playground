@@ -13,8 +13,6 @@ export const Url = styled.a.attrs({
   }
 `;
 
-
-
 export enum infoTypes {
   success = "success",
   danger = "danger",
@@ -71,11 +69,40 @@ export const SpaceEvenly = styled.div`
   justify-content: space-evenly;
 `;
 
-
 export const PageBanner = styled.header`
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   padding: 1rem;
   width: 100%;
   color: ${({ theme }) => theme.COLOR.TEXT};
   margin-bottom: 10px;
+  text-transform: uppercase;
+`;
+
+export const InputField = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  color: #123456;
+  font-size: 0.75rem;
+  background: white;
+
+  label {
+    background: lightgray;
+    width: 50%;
+    text-align: left;
+    padding: 5px 5px 5px 10px;
+  }
+
+  input,
+  select {
+    width: 50%;
+    border: none;
+    outline: none;
+  }
+
+  input {
+    margin-right: 3px;
+    padding-left: 5px;
+  }
 `;
