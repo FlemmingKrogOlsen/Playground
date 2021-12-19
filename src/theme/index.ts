@@ -22,4 +22,8 @@ export const theme = {
     WARNING: "#fff3cd",
     INFO: "#d1ecf1",
   },
+  BOOLEAN: {
+    TRUE: "green",
+    FALSE: "red",
+  }
 };

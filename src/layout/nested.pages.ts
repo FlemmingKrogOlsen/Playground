@@ -56,7 +56,7 @@ export const Editor = styled.div`
 `;
 
 export const EditorItem = styled.div`
-  background: ${({ theme }) => theme.COLOR.BACKGROUND};
+  background: ${({ theme }) => theme.COLOR.TEXT};
   color: ${({ theme }) => theme.COLOR.PRIMARY};
   padding: 10px;
   border-radius: 0.25rem;
