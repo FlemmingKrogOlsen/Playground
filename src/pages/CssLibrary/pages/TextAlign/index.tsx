@@ -50,7 +50,7 @@ const TextAlignPage = () => {
         border
         shadow
         title="text-align"
-        component={<MDNLink title="text-align" />}
+        component={<MDNLink name="text-align" value="center" />}
       >
         {(align === "left" || align === "right") && (
           <Info type={infoTypes.warning}>

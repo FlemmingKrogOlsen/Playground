@@ -100,7 +100,7 @@ const BorderPage = () => {
         border
         shadow
         title="Border"
-        component={<MDNLink title="border" />}
+        component={<MDNLink name="border" value="1px solid black" />}
       >
         <Info type={infoTypes.info}>
           <h3>top right bottom left</h3>
@@ -122,7 +122,7 @@ const BorderPage = () => {
         border
         shadow
         title="Border-Radius"
-        component={<MDNLink title="border-radius" />}
+        component={<MDNLink name="border-radius" value="1rem" />}
       >
         <Info type={infoTypes.info}>
           <h3>Corners</h3>

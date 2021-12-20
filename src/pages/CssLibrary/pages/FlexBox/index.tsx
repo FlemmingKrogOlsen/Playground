@@ -92,7 +92,7 @@ const FlexBoxPage = () => {
         border
         shadow
         title="flex-direction"
-        component={<MDNLink title="flex-direction" />}
+        component={<MDNLink name="flex-direction" value="row" />}
       >
         {(direction === "row-reverse" || direction === "column-reverse") && (
           <Info type={infoTypes.danger}>
@@ -108,7 +108,7 @@ const FlexBoxPage = () => {
         )}
       </Section>
 
-      <Section border shadow title="gap" component={<MDNLink title="gap" />}>
+      <Section border shadow title="gap" component={<MDNLink name="gap" value="1rem" />}>
         <div />
       </Section>
 
@@ -116,7 +116,7 @@ const FlexBoxPage = () => {
         border
         shadow
         title="justify-content"
-        component={<MDNLink title="justify-content" />}
+        component={<MDNLink name="justify-content" value="center" />}
       >
         <div />
       </Section>
@@ -125,7 +125,7 @@ const FlexBoxPage = () => {
         border
         shadow
         title="align-items"
-        component={<MDNLink title="align-items" />}
+        component={<MDNLink name="align-items" value="center" />}
       >
         <div />
       </Section>
