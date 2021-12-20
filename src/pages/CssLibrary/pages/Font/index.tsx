@@ -11,26 +11,23 @@ import {
 } from "layout/nested.pages";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import Select from "nestedComponents/Select";
-
-const fontWeightOptions = [
-  "100",
-  "200",
-  "300",
-  "normal",
-  "500",
-  "600",
-  "bold",
-  "800",
-  "900",
-  "lighter",
-  "bolder",
-];
+import absoluteSize from "data/css/absolute-size";
+import { fontWeightOptions } from "data/css/options/font-weight";
+import cssLengths from "data/css/length";
+import CheckCSSSupport from "nestedComponents/CheckCssSupport";
+import BrowserDetect from "helpers/getBrowserName";
+import { fontFamilyOptions } from "data/css/options/font-family";
 
 const FontPage = () => {
-  const [fontSize, setFontSize] = useState<string>("1rem");
-  const [fontWeight, setFontWeight] = useState<string>("normal");
+  const [fontSize, setFontSize] = useState<string>("medium");
+  const [fontWeight, setFontWeight] = useState<string>("400");
+  const [fontFamily, setFontFamily] = useState<string>("Montserrat");
   const cssString = `.container {
   font-size: ${fontSize};
+  font-weight: ${fontWeight};
+  font-family: ${fontFamily} ${
+    fontFamily === "Montserrat" ? ",sans-serif" : ""
+  };
 }`;
 
   return (
@@ -38,7 +35,7 @@ const FontPage = () => {
       <Section border shadow title="Preview Window">
         <Container>
           <Box>
-            <Text options={{ fontSize, fontWeight }}>
+            <Text options={{ fontSize, fontWeight, fontFamily }}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Similique quaerat illum delectus officia, culpa pariatur cumque
               saepe velit architecto nesciunt repudiandae dolor incidunt ex
@@ -55,7 +52,25 @@ const FontPage = () => {
         title="font-size"
         component={<MDNLink title="font-size" />}
       >
-        <div />
+        <Info type={infoTypes.info}>
+          <p>
+            The <code>font-size</code> also accepts:{" "}
+            <b>
+              {cssLengths.join(", ")}, <small>%</small>.
+            </b>
+          </p>
+        </Info>
+        {(fontSize === "larger" || fontSize === "smaller") && (
+          <Info type={infoTypes.info}>
+            <h2>larger, smaller</h2>
+            <p>
+              Relative-size keywords. The font will be larger or smaller
+              relative to the parent element's font size, roughly by the ratio
+              used to separate the absolute-size keywords in
+              'font-size'-dropdown.
+            </p>
+          </Info>
+        )}
       </Section>
 
       <Section
@@ -103,11 +118,11 @@ const FontPage = () => {
       <Editor>
         <InputField>
           <label htmlFor="fontSize">font-size</label>
-          <input
-            type="text"
-            id="fontSize"
+          <Select
             value={fontSize}
             onChange={(e) => setFontSize(e.target.value)}
+            options={absoluteSize}
+            id="fontSize"
           />
         </InputField>
 
@@ -121,10 +136,28 @@ const FontPage = () => {
           />
         </InputField>
 
+        <InputField>
+          <label htmlFor="fontFamily">font-family</label>
+          <Select
+            value={fontFamily}
+            onChange={(e) => setFontFamily(e.target.value)}
+            options={fontFamilyOptions}
+            id="fontFamily"
+          />
+        </InputField>
+
         <EditorItem>
+          {fontFamily === "Montserrat" ? "@import url( [link to font] )" : ""}
           <pre>{cssString}</pre>
         </EditorItem>
         <ButtonCopyClipboard text={cssString} />
+        <EditorItem>
+          <h3 style={{ textAlign: "center" }}>{BrowserDetect()} @supports</h3>
+          <CheckCSSSupport testValue="url()" name="@import" />
+          <CheckCSSSupport testValue="medium" name="font-size" />
+          <CheckCSSSupport testValue="normal" name="font-weight" />
+          <CheckCSSSupport testValue="serif" name="font-family" />
+        </EditorItem>
       </Editor>
     </>
   );

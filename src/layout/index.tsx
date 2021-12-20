@@ -18,7 +18,7 @@ const Layout = () => (
         <MenuLink to="/about">About</MenuLink>
       </nav>
     </Header>
-    <MainContent maxWidth={700}>
+    <MainContent>
       <Outlet />
     </MainContent>
     <Footer>

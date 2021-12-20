@@ -48,7 +48,7 @@ let componentPages: ComponentPage[] = [
     id: 4,
     name: "Font",
     component: FontPage,
-    tags: ["font-size", "font-weight"],
+    tags: ["@import url()","font-size", "font-weight","font-family"],
   },
 ];
 

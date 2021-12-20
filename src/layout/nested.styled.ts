@@ -12,7 +12,7 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.COLOR.PRIMARY};
     padding: 5px;
     border-radius: 0.5rem;
-    width: 250px;
+    width: ${({ theme }) => theme.DATA.ASIDE_WIDTH};
     a {
       padding: 0 0.5rem;
     }

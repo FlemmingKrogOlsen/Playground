@@ -46,7 +46,7 @@ export const Editor = styled.div`
   position: absolute;
   top: 0px;
   left: calc(100% + 10px);
-  width: 250px;
+  width: ${({ theme }) => theme.DATA.ASIDE_WIDTH};
   margin: 0 auto;
   padding: 10px;
   text-align: center;

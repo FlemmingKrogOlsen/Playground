@@ -1,9 +1,4 @@
-type FontWeightType = {
-  name: string;
-  value: string;
-};
-
-const fontWeightOptions: FontWeightType[] = [
+export const fontWeightOptions: CustomSelectType[] = [
   {
     name: "Thin / 100",
     value: "100",
@@ -49,5 +44,3 @@ const fontWeightOptions: FontWeightType[] = [
     value: "lighter",
   },
 ];
-
-export default fontWeightOptions;

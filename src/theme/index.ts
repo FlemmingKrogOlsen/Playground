@@ -25,5 +25,9 @@ export const theme = {
   BOOLEAN: {
     TRUE: "green",
     FALSE: "red",
+  },
+  DATA: {
+    ASIDE_WIDTH: "300px",
+    MAIN_WIDTH: "700px"
   }
 };

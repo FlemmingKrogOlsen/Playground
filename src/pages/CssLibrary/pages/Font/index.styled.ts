@@ -21,6 +21,7 @@ export const Text = styled.div<{
   options: {
     fontSize: string;
     fontWeight: string;
+    fontFamily: string;
   }
 }>`
   text-align: left;
@@ -28,4 +29,5 @@ export const Text = styled.div<{
   padding: 5px 10px;
   font-size: ${(props) => props.options.fontSize};
   font-weight: ${(props) => props.options.fontWeight};
+  font-family: ${(props) => props.options.fontFamily};
 `;

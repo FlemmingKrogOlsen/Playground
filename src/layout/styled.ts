@@ -61,8 +61,8 @@ export const MenuLink = styled(NavLink)`
   }
 `;
 
-export const MainContent = styled.div<{ maxWidth: number }>`
-  max-width: ${({ maxWidth }) => maxWidth}px;
+export const MainContent = styled.div`
+  max-width: ${({ theme }) => theme.DATA.MAIN_WIDTH};
   margin: auto;
 `;
 
