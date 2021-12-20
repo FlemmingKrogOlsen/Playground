@@ -13,10 +13,16 @@ import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import Select from "nestedComponents/Select";
 import absoluteSize from "data/css/absolute-size";
 import { fontWeightOptions } from "data/css/options/font-weight";
-import cssLengths from "data/css/length";
-import CheckCSSSupport from "nestedComponents/CheckCssSupport";
-import BrowserDetect from "helpers/getBrowserName";
 import { fontFamilyOptions } from "data/css/options/font-family";
+import {
+  previewWindowText,
+  fontSizeLengthText,
+  fontSizeLargerSmallerText,
+  fontWeightBolder,
+  fontWeightLighter,
+  fontWeightRelativeWeights,
+  fontWeightAccessibilityConcerns,
+} from "./data.text";
 
 const FontPage = () => {
   const [fontSize, setFontSize] = useState<string>("medium");
@@ -25,7 +31,7 @@ const FontPage = () => {
   const cssString = `.container {
   font-size: ${fontSize};
   font-weight: ${fontWeight};
-  font-family: ${fontFamily} ${
+  font-family: '${fontFamily}' ${
     fontFamily === "Montserrat" ? ",sans-serif" : ""
   };
 }`;
@@ -36,11 +42,7 @@ const FontPage = () => {
         <Container>
           <Box>
             <Text options={{ fontSize, fontWeight, fontFamily }}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Similique quaerat illum delectus officia, culpa pariatur cumque
-              saepe velit architecto nesciunt repudiandae dolor incidunt ex
-              asperiores, quibusdam a quisquam non veritatis qui! Quidem odit
-              officia aspernatur laudantium, autem illum iure dolorem?
+              {previewWindowText}
             </Text>
           </Box>
         </Container>
@@ -50,25 +52,13 @@ const FontPage = () => {
         border
         shadow
         title="font-size"
-        component={<MDNLink title="font-size" />}
+        component={<MDNLink name="font-size" value={fontSize} />}
       >
-        <Info type={infoTypes.info}>
-          <p>
-            The <code>font-size</code> also accepts:{" "}
-            <b>
-              {cssLengths.join(", ")}, <small>%</small>.
-            </b>
-          </p>
-        </Info>
+        <Info type={infoTypes.info}>{fontSizeLengthText}</Info>
         {(fontSize === "larger" || fontSize === "smaller") && (
           <Info type={infoTypes.info}>
             <h2>larger, smaller</h2>
-            <p>
-              Relative-size keywords. The font will be larger or smaller
-              relative to the parent element's font size, roughly by the ratio
-              used to separate the absolute-size keywords in
-              'font-size'-dropdown.
-            </p>
+            <p>{fontSizeLargerSmallerText}</p>
           </Info>
         )}
       </Section>
@@ -77,40 +67,33 @@ const FontPage = () => {
         border
         shadow
         title="font-weight"
-        component={<MDNLink title="font-weight" />}
+        component={<MDNLink name="font-weight" value={fontWeight} />}
       >
         {(fontWeight === "lighter" || fontWeight === "bolder") && (
           <Info type={infoTypes.info}>
             {fontWeight === "lighter" && (
               <div>
-                <h2>lighter</h2> One relative font weight lighter than the
-                parent element. Note that only four font weights are considered
-                for relative weight calculation; see the Meaning of relative
-                weights section below.
+                <h2>lighter</h2>
+                {fontWeightLighter}
               </div>
             )}
             {fontWeight === "bolder" && (
               <div>
                 <h2>bolder</h2>
-                One relative font weight heavier than the parent element. Note
-                that only four font weights are considered for relative weight
-                calculation; see the Meaning of relative weights section below.
+                {fontWeightBolder}
               </div>
             )}
-            <h2>Meaning of relative weights</h2>
-            Note that when using relative weights, only four font weights are
-            considered — thin (100), normal (400), bold (700), and heavy (900).
-            If a font-family has more weights available, they are ignored for
-            the purposes of relative weight calculation.
+            <div>
+              <br />
+              <h2>Meaning of relative weights</h2>
+              {fontWeightRelativeWeights}
+            </div>
           </Info>
         )}
         {(fontWeight === "100" || fontWeight === "200") && (
           <Info type={infoTypes.danger}>
             <h2>Accessibility concerns</h2>
-            People experiencing low vision conditions may have difficulty
-            reading text set with a font-weight value of 100 (Thin/Hairline) or
-            200 (Extra Light), especially if the font has a low contrast color
-            ratio.
+            {fontWeightAccessibilityConcerns}
           </Info>
         )}
       </Section>
@@ -151,13 +134,6 @@ const FontPage = () => {
           <pre>{cssString}</pre>
         </EditorItem>
         <ButtonCopyClipboard text={cssString} />
-        <EditorItem>
-          <h3 style={{ textAlign: "center" }}>{BrowserDetect()} @supports</h3>
-          <CheckCSSSupport testValue="url()" name="@import" />
-          <CheckCSSSupport testValue="medium" name="font-size" />
-          <CheckCSSSupport testValue="normal" name="font-weight" />
-          <CheckCSSSupport testValue="serif" name="font-family" />
-        </EditorItem>
       </Editor>
     </>
   );
