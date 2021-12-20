@@ -41,6 +41,6 @@ export const fontWeightOptions: CustomSelectType[] = [
   },
   {
     name: "Bolder",
-    value: "lighter",
+    value: "bolder",
   },
 ];
