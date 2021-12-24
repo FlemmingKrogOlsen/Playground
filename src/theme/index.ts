@@ -27,7 +27,7 @@ export const theme = {
     FALSE: "red",
   },
   DATA: {
-    ASIDE_WIDTH: "300px",
+    ASIDE_WIDTH: "320px",
     MAIN_WIDTH: "700px"
   }
 };
