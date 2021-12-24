@@ -5,7 +5,7 @@ const ButtonCopyClipboard = ({ text }: { text: string }) => (
     onClick={() => {
       navigator.clipboard.writeText(text);
     }}
-    title="Copy"
+    title="Copy2Clipboard"
     icon={
       <svg
         xmlns="http://www.w3.org/2000/svg"
