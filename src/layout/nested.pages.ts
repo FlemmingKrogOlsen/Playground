@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Url = styled.a.attrs({
   target: "_blank",
@@ -13,35 +13,6 @@ export const Url = styled.a.attrs({
   }
 `;
 
-export enum infoTypes {
-  success = "success",
-  danger = "danger",
-  warning = "warning",
-  info = "info",
-}
-
-export const Info = styled.div<{
-  type: infoTypes;
-}>`
-  padding: 5px;
-  background: ${(props) => {
-    switch (props.type) {
-      case "success":
-        return props.theme.INFO.SUCCESS;
-      case "danger":
-        return props.theme.INFO.DANGER;
-      case "warning":
-        return props.theme.INFO.WARNING;
-      case "info":
-        return props.theme.INFO.INFO;
-      default:
-        return "transparent";
-    }
-  }};
-  margin: 5px;
-  font-size: 0.7rem;
-`;
-
 export const Editor = styled.div`
   position: absolute;
   top: 0px;
@@ -53,6 +24,9 @@ export const Editor = styled.div`
   color: ${({ theme }) => theme.COLOR.TEXT};
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   border-radius: 0.5rem;
+  h3 {
+    margin-bottom: 10px;
+  }
 `;
 
 export const EditorItem = styled.div`
@@ -63,6 +37,37 @@ export const EditorItem = styled.div`
   text-align: left;
   font-size: 0.7rem;
   margin-bottom: 10px;
+`;
+
+const dividerCommon = css`
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 0.5rem;
+  transform: translateX(-50%);
+  border-radius: 0.5rem;
+`;
+
+export const EditorItemDivider = styled.div`
+  position: relative;
+  background: #181818};
+  height: 2rem;
+  transform: translateX(-1rem);
+  width: calc(100% + 2rem);
+  &:before {
+    ${dividerCommon};
+    top:0;
+    background: ${({ theme }) => theme.COLOR.PRIMARY};
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  };
+  &:after {
+    ${dividerCommon};
+    bottom:0;
+    background: ${({ theme }) => theme.COLOR.PRIMARY};
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  };
 `;
 
 export const SpaceEvenly = styled.div`
@@ -106,4 +111,33 @@ export const InputField = styled.div`
     margin-right: 3px;
     padding-left: 5px;
   }
+`;
+
+export enum infoTypes {
+  success = "success",
+  danger = "danger",
+  warning = "warning",
+  info = "info",
+}
+
+export const Info = styled.div<{
+  type: infoTypes;
+}>`
+  padding: 5px;
+  background: ${(props) => {
+    switch (props.type) {
+      case "success":
+        return props.theme.INFO.SUCCESS;
+      case "danger":
+        return props.theme.INFO.DANGER;
+      case "warning":
+        return props.theme.INFO.WARNING;
+      case "info":
+        return props.theme.INFO.INFO;
+      default:
+        return "transparent";
+    }
+  }};
+  margin: 5px;
+  font-size: 0.7rem;
 `;
