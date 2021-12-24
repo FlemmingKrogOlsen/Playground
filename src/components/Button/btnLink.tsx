@@ -8,8 +8,8 @@ const ButtonLink: FC<IButtonLink> = ({ title, icon, url }): ReactElement => (
     target={url.startsWith("http") ? "_blank" : "_self"}
     rel="noreferrer"
   >
-    {icon}
-    {title}
+    <div>{icon}</div>
+    <div>{title}</div>
   </StyledLink>
 );
 

@@ -7,25 +7,27 @@ const colors = {
   PRIMARY: "#123456",
 };
 
-const shadow = "rgba(0, 0, 0, 0.3) 0px 15px 30px 0px, rgba(0, 0, 0, 0.3) 0px 5px 10px 0px"
-const shadowActive = "rgba(0, 0, 0, 0.3) 0px 5px 10px 0px, rgba(0, 0, 0, 0.3) 0px 5px 10px 0px"
-
+const shadow =
+  "rgba(0, 0, 0, 0.3) 0px 15px 30px 0px, rgba(0, 0, 0, 0.3) 0px 5px 10px 0px";
+const shadowActive =
+  "rgba(0, 0, 0, 0.3) 0px 5px 10px 0px, rgba(0, 0, 0, 0.3) 0px 5px 10px 0px";
 
 const commonStyle = css`
   svg {
     height: 1.5rem;
-    vertical-align:middle;
+    vertical-align: middle;
     margin-right: 2px;
   }
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   position: relative;
   border: 2px solid #123456;
   border-radius: 0.5rem;
   font-size: 1rem;
   color: ${colors.BLACK};
   background: ${colors.COMPONENT_BACKGROUND};
-  padding: 5px 10px 5px 7px;
+  padding: 5px 10px 5px 10px;
   margin: 5px;
   box-shadow: ${shadow};
 
@@ -49,7 +51,6 @@ const StyledBtn = styled.button`
 
 const StyledLink = styled.a`
   ${commonStyle};
-  display: inline-block;
   text-decoration: none;
 `;
 

@@ -4,8 +4,8 @@ import { StyledBtn } from "./styled";
 
 const Button: FC<IButton> = ({ title, icon, onClick }): ReactElement => (
   <StyledBtn onClick={onClick}>
-    {icon}
-    {title}
+    <div>{icon}</div>
+    <div>{title}</div>
   </StyledBtn>
 );
 
