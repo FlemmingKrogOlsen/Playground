@@ -62,6 +62,7 @@ export const EditorItem = styled.div`
   border-radius: 0.25rem;
   text-align: left;
   font-size: 0.7rem;
+  margin-bottom: 10px;
 `;
 
 export const SpaceEvenly = styled.div`
