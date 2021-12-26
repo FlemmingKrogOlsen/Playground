@@ -69,7 +69,6 @@ interface IProps {
   data: Array<any>;
   headers: Array<IHeader>;
   state: boolean;
-  skeletonRows: number;
   sortBy?: string;
 }
 
