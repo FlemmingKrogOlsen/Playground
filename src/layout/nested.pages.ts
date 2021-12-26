@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import { scrollBarsCSS } from "theme/scrollbars";
+import { reduceSize } from "./styled";
 
 export const Url = styled.a.attrs({
   target: "_blank",
@@ -24,6 +26,10 @@ export const Editor = styled.div`
   color: ${({ theme }) => theme.COLOR.TEXT};
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   border-radius: 0.5rem;
+  max-height: calc(100vh - ${reduceSize}px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  ${scrollBarsCSS};
   h3 {
     margin-bottom: 10px;
   }
@@ -38,6 +44,13 @@ export const EditorItem = styled.div`
   font-size: 0.7rem;
   margin-bottom: 10px;
 `;
+
+export const EditorItemLarge = styled(EditorItem)`
+  height: calc(100vh - ${reduceSize}px - 78px);
+  overflow-y: auto;
+  ${scrollBarsCSS};
+`;
+
 
 const dividerCommon = css`
   content: "";
