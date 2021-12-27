@@ -1,4 +1,13 @@
+import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import DetailsSummary from "components/DetailsSummary";
+import { Editor, EditorItem } from "layout/nested.pages";
+
+const text = `<DetailsSummary 
+  title="Title Text" 
+  open={false}
+>
+  Content goes here
+</DetailsSummary>`;
 
 const DetailsSummaryPage = () => (
   <>
@@ -46,6 +55,12 @@ const DetailsSummaryPage = () => (
       cupiditate perferendis eius veritatis! Asperiores tempore dolor,
       voluptates accusantium quas quaerat?
     </DetailsSummary>
+    <Editor>
+      <EditorItem>
+        <pre>{text}</pre>
+      </EditorItem>
+      <ButtonCopyClipboard text={text} />
+    </Editor>
   </>
 );
 

@@ -1,8 +1,19 @@
+import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import SectionProgress from "components/SectionProgress";
-import { SpaceEvenly } from "layout/nested.pages";
+import { Editor, EditorItem, SpaceEvenly } from "layout/nested.pages";
+
+const text = `<SectionProgress 
+  title="Title Text" 
+  height={200} 
+  procent
+>
+  [Content goes here]
+</SectionProgress>
+`;
 
 const SectionProgressPage = () => {
   return (
+    <>
     <SpaceEvenly>
       <SectionProgress title="Title Text" height={200} procent>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
@@ -115,6 +126,13 @@ const SectionProgressPage = () => {
         aspernatur, nisi dolorum repudiandae commodi sequi sed!
       </SectionProgress>
     </SpaceEvenly>
+    <Editor>
+      <EditorItem>
+        <pre>{text}</pre>
+      </EditorItem>
+      <ButtonCopyClipboard text={text} />
+    </Editor>
+    </>
   );
 };
 
