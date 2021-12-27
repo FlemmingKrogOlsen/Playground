@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import {colors} from "./colors"
+import { colors } from "./colors";
 
 const CustomRadio = styled.div`
   display: block;
   position: relative;
   padding-left: 40px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -28,9 +28,9 @@ const CustomRadio = styled.div`
     }
   }
 
-label {
-  font-size: 14px;
-}
+  label {
+    font-size: 1.4rem;
+  }
 
   span {
     position: absolute;

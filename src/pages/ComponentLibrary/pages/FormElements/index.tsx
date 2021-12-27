@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
-import Form from "components/FormElements";
+import { Editor, EditorItem } from "layout/nested.pages";
+import AnimatedCheckbox from "components/FormElements/animCheckBox";
+import Form, { Input, Label, LabelText, Select, TextArea } from "components/FormElements";
 import Buttons from "components/FormElements/buttonsContainer";
-import CustomCheckbox from "components/FormElements/customCheckbox";
 import CustomRadio from "components/FormElements/customRadio";
 import CustomSelect from "components/FormElements/customSelect";
-import { Editor, EditorItem } from "layout/nested.pages";
 
 let renderCount = 0;
 
@@ -30,39 +30,44 @@ const FormElements = () => {
 
   console.log(watch());
   return (
-    <div style={{ width: "500px", margin: "auto" }}>
-      <span className="counter">Render Count: {renderCount}</span>
+    <div>
       <Form
         onSubmit={handleSubmit((data) => {
           console.log(data);
         })}
       >
-        <fieldset>
-          <legend>Text Input</legend>
-          <div>
-            <label htmlFor="firstName">First Name:</label>
-            <input
-              {...register("firstName", { required: "This is required" })}
-              id="firstName"
-              type="text"
-            />
-            {errors.firstName && <p>{errors.firstName.message}</p>}
-          </div>
-
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              {...register("email", { required: "This is required" })}
-              id="email"
-              type="email"
-            />
-            {errors.email && <p>{errors.email.message}</p>}
-          </div>
+        <fieldset style={{ textAlign: "center" }}>
+          <legend>CheckBox in Fieldset</legend>
+          <AnimatedCheckbox
+            label="Are you a developer?"
+            defaultChecked={true}
+            {...register("developer")}
+          />
         </fieldset>
 
         <div>
-          <label htmlFor="age">Age</label>
-          <input
+          <Label htmlFor="firstName">First Name:</Label>
+          <Input
+            {...register("firstName", { required: "This is required" })}
+            id="firstName"
+            type="text"
+          />
+          {errors.firstName && <p>{errors.firstName.message}</p>}
+        </div>
+
+        <div>
+          <Label htmlFor="email">Email:</Label>
+          <Input
+            {...register("email", { required: "This is required" })}
+            id="email"
+            type="email"
+          />
+          {errors.email && <p>{errors.email.message}</p>}
+        </div>
+
+        <div>
+          <Label htmlFor="age">Age</Label>
+          <Input
             {...register("age", { valueAsNumber: true })}
             id="age"
             type="number"
@@ -70,26 +75,8 @@ const FormElements = () => {
         </div>
 
         <div>
-          <label htmlFor="date">Date</label>
-          <input
-            {...register("date", { valueAsDate: true })}
-            id="date"
-            type="date"
-          />
-        </div>
-
-        <CustomSelect>
-          <label htmlFor="gender">Gender</label>
-          <select {...register("gender")} id="gender">
-            <option value="">Select...</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-          </select>
-        </CustomSelect>
-
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
+          <Label htmlFor="password">Password:</Label>
+          <Input
             {...register("password", {
               required: "This is required",
               minLength: { value: 8, message: "Minimum 8 chars" },
@@ -101,26 +88,16 @@ const FormElements = () => {
         </div>
 
         <div>
-          <label htmlFor="textarea">TextArea</label>
-          <textarea {...register("textarea")} id="textarea" />
+          <Label htmlFor="date">Date</Label>
+          <Input
+            {...register("date", { valueAsDate: true })}
+            id="date"
+            type="date"
+          />
         </div>
 
-        <CustomCheckbox>
-          <div>Text</div>
-          <label htmlFor="developer">
-            <div>Are you a developer?</div>
-            <input
-              {...register("developer")}
-              value="yes"
-              type="checkbox"
-              id="developer"
-            />
-            <span />
-          </label>
-        </CustomCheckbox>
-
         <div>
-          <div>Text</div>
+          <LabelText>Language</LabelText>
           <div>
             <CustomRadio>
               <label>
@@ -148,11 +125,27 @@ const FormElements = () => {
           </div>
         </div>
 
+        <CustomSelect>
+          <Label htmlFor="gender">Gender</Label>
+          <Select {...register("gender")} id="gender">
+            <option value="" disabled selected>Select...</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">whatever just wash your hands</option>
+          </Select>
+        </CustomSelect>
+
+        <div>
+          <Label htmlFor="textarea">TextArea</Label>
+          <TextArea {...register("textarea")} id="textarea" />
+        </div>
+
         <Buttons>
           <input type="submit" />
           <input type="reset" />
         </Buttons>
       </Form>
+
       <Editor>
         <h2>Form submit data</h2>
         <h3 style={{ marginBottom: "10px" }}>(react-hook-form)</h3>
@@ -161,6 +154,7 @@ const FormElements = () => {
             {JSON.stringify(watch(), null, 2)}
           </pre>
         </EditorItem>
+        <span className="counter">Render Count: {renderCount}</span>
       </Editor>
     </div>
   );
