@@ -7,7 +7,7 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   width: 100%;
-  height: 200px;
+  height: 225px;
   padding: 10px;
   gap: ${({ gap }) => gap};
   display: flex;
