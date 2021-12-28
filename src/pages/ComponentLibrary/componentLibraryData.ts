@@ -15,6 +15,7 @@ import SectionPage from "./pages/SectionPage";
 import FormElements from "./pages/FormElements";
 import ButtonsPage from "./pages/ButtonsPage";
 import CustomTablePage from "./pages/CustomTablePage";
+import RadioCardsPage from "./pages/RadioCardsPage";
 
 interface ComponentPage {
   id: number;
@@ -97,6 +98,11 @@ let componentPages: ComponentPage[] = [
     id: 15,
     name: "Custom Table",
     component: CustomTablePage,
+  },
+  {
+    id: 16,
+    name: "Radio Cards",
+    component: RadioCardsPage,
   },
 ];
 
