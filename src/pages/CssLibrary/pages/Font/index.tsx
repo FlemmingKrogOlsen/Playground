@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Section from "components/Section";
-import { Container, Box, Text } from "./index.styled";
+import { Container, Box, Text } from "./styled";
 import MDNLink from "nestedComponents/MDNLink";
 import {
   Editor,
@@ -11,11 +11,12 @@ import {
 } from "layout/nested.pages";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import Select from "nestedComponents/Select";
-import absoluteSize from "data/css/absolute-size";
-
-import { texts } from "./data/text";
-import { fontWeightOptions } from "./data/font-weight";
-import { fontFamilyOptions } from "./data/font-family";
+import {
+  fontWeightOptions,
+  fontFamilyOptions,
+  texts,
+  absoluteSize,
+} from "./data";
 
 const FontPage = () => {
   const [fontSize, setFontSize] = useState<string>("medium");
