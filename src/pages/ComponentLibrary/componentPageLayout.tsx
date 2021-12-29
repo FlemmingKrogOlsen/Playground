@@ -14,7 +14,10 @@ export const ComponentPageLayout = () => {
         <div>page Not found</div>
       ) : (
         <>
-          <PageBanner>{page.name}</PageBanner>
+          <PageBanner>
+            <div>{page.name}</div>
+            <div><a href={page.github} target="_blank" rel="noreferrer">on GitHub</a></div>
+          </PageBanner>
           {createElement(page.component)}
         </>
       )}

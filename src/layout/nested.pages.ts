@@ -95,6 +95,14 @@ export const PageBanner = styled.header`
   color: ${({ theme }) => theme.COLOR.TEXT};
   margin-bottom: 10px;
   text-transform: uppercase;
+  position: relative;
+  a {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    font-size: 0.5rem;
+  }
 `;
 
 export const InputField = styled.div`

@@ -20,6 +20,7 @@ import RadioCardsPage from "./pages/RadioCardsPage";
 interface ComponentPage {
   id: number;
   name: string;
+  github: string;
   component: FC;
 }
 
@@ -27,81 +28,97 @@ let componentPages: ComponentPage[] = [
   {
     id: 1,
     name: "Progress Pie Card",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/ProgressPieCard",
     component: ProgressIndicatorCardPage,
   },
   {
     id: 2,
     name: "Info Card",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/InfoCard",
     component: InfoCardPage,
   },
   {
     id: 3,
     name: "Drag 'N Drop",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/DragNDrop",
     component: DragNDropPage,
   },
   {
     id: 4,
     name: "Table Fixed Header",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/TableFixedHeader",
     component: TableFixedHeaderPage,
   },
   {
     id: 5,
     name: "Table with Sum",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/TableSum",
     component: TableWithSumPage,
   },
   {
     id: 6,
     name: "Flip Card",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/FlipCard",
     component: FlipCardPage,
   },
   {
     id: 7,
     name: "Section Progress",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/SectionProgress",
     component: SectionProgressPage,
   },
   {
     id: 8,
     name: "Tabs",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Tabs",
     component: TabsPage,
   },
   {
     id: 9,
     name: "Details Summary",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/DetailsSummary",
     component: DetailsSummaryPage,
   },
   {
     id: 10,
     name: "Accordion",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Accordion",
     component: AccordionPage,
   },
   {
     id: 11,
     name: "Spinners",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Spinner",
     component: SpinnersPage,
   },
   {
     id: 12,
     name: "Section",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Section",
     component: SectionPage,
   },
   {
     id: 13,
     name: "Form Elements",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/FormElements",
     component: FormElements,
   },
   {
     id: 14,
     name: "Buttons",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Button",
     component: ButtonsPage,
   },
   {
     id: 15,
     name: "Custom Table",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/CustomTable",
     component: CustomTablePage,
   },
   {
     id: 16,
     name: "Radio Cards",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/RadioCards",
     component: RadioCardsPage,
   },
 ];
