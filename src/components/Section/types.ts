@@ -6,6 +6,6 @@ export type IColor = {
 
 export interface IProps extends IColor {
 title: string
-children: React.ReactNode
+children?: React.ReactNode
 component?: React.ReactNode
 }
