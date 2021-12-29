@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Section from "components/Section";
-import { Box, Container, Text, TextInfo } from "./index.styled";
+import { Box, Container, Text, TextInfo } from "./styled";
 import {
   Info,
   infoTypes,
@@ -11,27 +11,11 @@ import {
 import Select from "nestedComponents/Select";
 import MDNLink from "nestedComponents/MDNLink";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
-
-const flexDirections: string[] = [
-  "row",
-  "row-reverse",
-  "column",
-  "column-reverse",
-];
-
-const alignment: string[] = ["flex-start", "center", "flex-end", "stretch"];
-const justifyOptions: string[] = [
-  "flex-start",
-  "center",
-  "flex-end",
-  "space-between",
-  "space-around",
-  "space-evenly",
-];
+import { flexDirections, justifyOptions, alignment, sizes } from "./data";
 
 const FlexBoxPage = () => {
   const [direction, setDirection] = useState<string>("row");
-  const [gap, setGap] = useState<string>("5px");
+  const [gap, setGap] = useState<string>("0.5rem");
   const [justify, setJustify] = useState<string>("center");
   const [align, setAlign] = useState<string>("center");
 
@@ -65,6 +49,7 @@ const FlexBoxPage = () => {
 
   return (
     <>
+      {/* Preview Window */}
       <Section border shadow title="Preview Window">
         <Container direction={direction} gap={gap}>
           <Box align={align} justify={justify}>
@@ -108,7 +93,12 @@ const FlexBoxPage = () => {
         )}
       </Section>
 
-      <Section border shadow title="gap" component={<MDNLink name="gap" value="1rem" />}>
+      <Section
+        border
+        shadow
+        title="gap"
+        component={<MDNLink name="gap" value="1rem" />}
+      >
         <div />
       </Section>
 
@@ -130,6 +120,7 @@ const FlexBoxPage = () => {
         <div />
       </Section>
 
+      {/* ASide Editor */}
       <Editor>
         <InputField>
           <label htmlFor="direction">flex-direction</label>
@@ -140,15 +131,17 @@ const FlexBoxPage = () => {
             id="direction"
           />
         </InputField>
+
         <InputField>
           <label htmlFor="gap">gap</label>
-          <input
-            type="text"
-            id="gap"
+          <Select
             value={gap}
             onChange={(e) => setGap(e.target.value)}
+            options={sizes}
+            id="gap"
           />
         </InputField>
+
         <InputField>
           <label htmlFor="justify">justify-content</label>
           <Select
@@ -158,6 +151,7 @@ const FlexBoxPage = () => {
             id="justify"
           />
         </InputField>
+
         <InputField>
           <label htmlFor="align">align-items</label>
           <Select
@@ -167,6 +161,7 @@ const FlexBoxPage = () => {
             id="align"
           />
         </InputField>
+
         <EditorItem>
           <pre>{cssString}</pre>
         </EditorItem>

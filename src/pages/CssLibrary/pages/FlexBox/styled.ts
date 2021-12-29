@@ -1,9 +1,5 @@
 import styled from "styled-components";
-
-interface ContainerProps {
-  direction: string;
-  gap: string;
-}
+import { ContainerProps, IBox } from "./types";
 
 export const Container = styled.div<ContainerProps>`
   width: 100%;
@@ -14,10 +10,7 @@ export const Container = styled.div<ContainerProps>`
   flex-direction: ${({ direction }) => direction};
 `;
 
-export const Box = styled.div<{
-  align: string;
-  justify: string;
-}>`
+export const Box = styled.div<IBox>`
   position: relative;
   display: flex;
   align-items: ${(props) => props.align};
@@ -35,8 +28,6 @@ export const Box = styled.div<{
     flex-direction: row;
   }
 `;
-
-
 
 export const Text = styled.div`
   display: flex;
