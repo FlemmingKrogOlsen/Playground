@@ -1,38 +1,38 @@
 import { useState } from "react";
 
 import Section from "components/Section";
-import { Container, BoxBorder } from "./index.styled";
-import {
-  Editor,
-  EditorItem,
-  Info,
-  infoTypes,
-  InputField,
-} from "layout/nested.pages";
+import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
+import { Editor, EditorItem, InputField } from "layout/nested.pages";
 import MDNLink from "nestedComponents/MDNLink";
 import Select from "nestedComponents/Select";
-import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
-
-const options: string[] = [
-  "dotted",
-  "dashed",
-  "solid",
-  "double",
-  "groove",
-  "ridge",
-  "inset",
-  "outset",
-];
+import { Container, BoxBorder } from "./styled";
+import { borderRadiusTopLeft, borderStyleOptions, sizes } from "./data";
 
 const BorderPage = () => {
-  const [borderWidth, setBorderWidth] = useState<string>("5px");
-  const [borderColor, setBorderColor] = useState<string>("steelblue");
+  const [borderWidth, setBorderWidth] = useState<string>("0.5rem");
+  const borderColor = "steelblue";
   const [borderStyle, setBorderStyle] = useState<string>("solid");
-  const [borderRadius, setBorderRadius] = useState<string>("16px");
+  const [borderRadius, setBorderRadius] = useState<string>("1rem");
+
+  const [borderRadiusSingle, setBorderRadiusSingle] =
+    useState<string>("1rem 1rem");
 
   const cssString = `.container {
   border: ${borderStyle} ${borderWidth} ${borderColor};
-  border-radius: ${borderRadius};
+  border-radius: ${borderRadius} ${borderRadius} ${borderRadius} ${borderRadius};
+
+/*
+  border-top: ${borderStyle} ${borderWidth} ${borderColor};
+  border-right: ${borderStyle} ${borderWidth} ${borderColor};
+  border-bottom: ${borderStyle} ${borderWidth} ${borderColor};
+  border-left: ${borderStyle} ${borderWidth} ${borderColor};
+
+  border-top-left-radius: ${borderRadiusSingle};
+  border-top-right-radius: ${borderRadius} ${borderRadius};
+  border-bottom-left-radius: ${borderRadius} ${borderRadius};
+  border-bottom-right-radius: ${borderRadius} ${borderRadius};
+*/
+
 }`;
 
   return (
@@ -45,106 +45,89 @@ const BorderPage = () => {
               borderColor,
               borderStyle,
               borderRadius,
+              borderRadiusSingle,
             }}
           >
-            Text goes here.....
+            <div style={{ textAlign: "center" }}>
+              <h2>border</h2>
+              <p>
+                <small>
+                  <b>TR</b>ou<b>BL</b>e - <b>T</b>op-<b>R</b>ight-<b>B</b>ottom-
+                  <b>L</b>eft
+                </small>
+              </p>
+            </div>
           </BoxBorder>
         </Container>
       </Section>
       <Editor>
         <InputField>
-          <label htmlFor="borderStyle">border-style</label>
+          <label htmlFor="borderStyle">style</label>
           <Select
             value={borderStyle}
             onChange={(e) => setBorderStyle(e.target.value)}
-            options={options}
+            options={borderStyleOptions}
             id="borderStyle"
           />
         </InputField>
 
         <InputField>
-          <label htmlFor="borderWidth">border-width</label>
-          <input
-            type="text"
-            id="borderWidth"
+          <label htmlFor="borderWidth">width</label>
+          <Select
             value={borderWidth}
             onChange={(e) => setBorderWidth(e.target.value)}
+            options={sizes}
+            id="borderWidth"
           />
         </InputField>
 
         <InputField>
-          <label htmlFor="borderColor">border-color</label>
-          <input
-            type="text"
-            id="borderColor"
-            value={borderColor}
-            onChange={(e) => setBorderColor(e.target.value)}
-          />
+          <label htmlFor="borderColor">color</label>
+          <input type="text" id="borderColor" value={borderColor} disabled />
         </InputField>
 
         <InputField>
-          <label htmlFor="borderRadius">border-radius</label>
-          <input
-            type="text"
-            id="borderRadius"
+          <label htmlFor="borderRadius">radius</label>
+          <Select
             value={borderRadius}
-            onChange={(e) => setBorderRadius(e.target.value)}
+            onChange={(e) => {
+              setBorderRadius(e.target.value);
+              setBorderRadiusSingle(`${e.target.value} ${e.target.value}`);
+            }}
+            options={sizes}
+            id="borderRadius"
           />
         </InputField>
+
+        <InputField>
+          <label htmlFor="borderTopLeftRadius">top-left-radius</label>
+          <Select
+            value={borderRadiusSingle}
+            onChange={(e) => setBorderRadiusSingle(e.target.value)}
+            options={borderRadiusTopLeft}
+            id="borderTopLeftRadius"
+          />
+        </InputField>
+
         <EditorItem>
           <pre>{cssString}</pre>
         </EditorItem>
         <ButtonCopyClipboard text={cssString} />
       </Editor>
+
       <Section
         border
         shadow
         title="Border"
         component={<MDNLink name="border" value="1px solid black" />}
-      >
-        <Info type={infoTypes.info}>
-          <h3>top right bottom left</h3>
-          Can be styled induvidually with the following properties: <br />
-          <i>
-            border-top-width, border-right-width, border-bottom-width,
-            border-left-width.
-            <br />
-            border-top-style, border-right-style, border-bottom-style,
-            border-left-style.
-            <br />
-            border-top-color, border-right-color, border-bottom-color,
-            border-left-color.
-          </i>
-          <br />
-        </Info>
-      </Section>
+      />
+
       <Section
         border
         shadow
         title="Border-Radius"
         component={<MDNLink name="border-radius" value="1rem" />}
-      >
-        <Info type={infoTypes.info}>
-          <h3>Corners</h3>
-          Can be styled induvidually with the following properties: <br />
-          <i>
-            border-top-right-radius
-            <br /> border-top-left-radius
-            <br /> border-bottom-right-radius
-            <br /> border-bottom-left-radius
-          </i>
-        </Info>
-
-        {borderRadius && (
-          <Info type={infoTypes.warning}>
-            <h3>Radius vs Style</h3>
-            IMHO Some styles dont work to good with border-radius.
-            <br />
-            these styles work IMO : <b>Solid</b>, <b>Double</b>, <b>Inset</b> &{" "}
-            <b>Outset</b>.
-          </Info>
-        )}
-      </Section>
+      />
     </>
   );
 };

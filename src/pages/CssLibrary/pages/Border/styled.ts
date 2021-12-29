@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BoxBorderProps } from "./types";
 
 export const Container = styled.div`
   width: 100%;
@@ -6,15 +7,6 @@ export const Container = styled.div`
   padding: 10px;
   gap: 5px;
 `;
-
-interface BoxBorderProps {
-  options: {
-    borderWidth: string;
-    borderColor: string;
-    borderStyle: string;
-    borderRadius: string;
-  };
-}
 
 export const BoxBorder = styled.div<BoxBorderProps>`
   display: flex;
@@ -25,9 +17,9 @@ export const BoxBorder = styled.div<BoxBorderProps>`
   font-size: 1.25rem;
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   color: ${({ theme }) => theme.COLOR.TEXT};
-  // Border styles
   border-width: ${(props) => props.options.borderWidth};
   border-style: ${(props) => props.options.borderStyle};
   border-color: ${(props) => props.options.borderColor};
   border-radius: ${(props) => props.options.borderRadius};
+  border-top-left-radius: ${(props) => props.options.borderRadiusSingle};
 `;
