@@ -3,8 +3,8 @@ import { useState } from "react";
 import Section from "components/Section";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import { Editor, EditorItem, InputField } from "layout/nested.pages";
-import MDNLink from "nestedComponents/MDNLink";
-import Select from "nestedComponents/Select";
+import MDNLink from "componentsNested/MDNLink";
+import Select from "componentsNested/Select";
 import { Container, BoxBorder } from "./styled";
 import { borderRadiusTopLeft, borderStyleOptions, sizes } from "./data";
 

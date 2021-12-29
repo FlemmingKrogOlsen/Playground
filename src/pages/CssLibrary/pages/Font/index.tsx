@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Section from "components/Section";
 import { Container, Box, Text } from "./styled";
-import MDNLink from "nestedComponents/MDNLink";
+import MDNLink from "componentsNested/MDNLink";
 import {
   Editor,
   EditorItem,
@@ -10,7 +10,7 @@ import {
   InputField,
 } from "layout/nested.pages";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
-import Select from "nestedComponents/Select";
+import Select from "componentsNested/Select";
 import {
   fontWeightOptions,
   fontFamilyOptions,

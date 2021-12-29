@@ -8,8 +8,8 @@ import {
   EditorItem,
   InputField,
 } from "layout/nested.pages";
-import Select from "nestedComponents/Select";
-import MDNLink from "nestedComponents/MDNLink";
+import Select from "componentsNested/Select";
+import MDNLink from "componentsNested/MDNLink";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import { flexDirections, justifyOptions, alignment, sizes } from "./data";
 
