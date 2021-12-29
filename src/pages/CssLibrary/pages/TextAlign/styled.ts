@@ -12,7 +12,6 @@ export const Box = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  /* font-size: 1.25rem; */
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   color: ${({ theme }) => theme.COLOR.TEXT};
   text-align: center;

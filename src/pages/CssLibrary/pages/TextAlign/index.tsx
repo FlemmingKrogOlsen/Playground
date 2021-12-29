@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Section from "components/Section";
-import { Container, Box, Text } from "./index.styled";
+import { Container, Box, Text } from "./styled";
 import MDNLink from "nestedComponents/MDNLink";
 import {
   Editor,
@@ -12,20 +12,11 @@ import {
 } from "layout/nested.pages";
 import Select from "nestedComponents/Select";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
-
-const options: string[] = [
-  "start",
-  "center",
-  "end",
-  "justify",
-  "match-parent",
-  "left",
-  "right",
-  "inherit",
-];
+import { textAlignOptions } from "./data";
 
 const TextAlignPage = () => {
   const [align, setAlign] = useState<string>("start");
+
   const cssString = `.container {
   text-align: ${align};
 }`;
@@ -128,7 +119,7 @@ const TextAlignPage = () => {
           <Select
             value={align}
             onChange={(e) => setAlign(e.target.value)}
-            options={options}
+            options={textAlignOptions}
             id="align"
           />
         </InputField>
