@@ -8,9 +8,9 @@ export const Container = styled.div`
   nav {
     position: absolute;
     top: 0;
-    right: calc(100% + 10px);
+    right: calc(100% + 1rem);
     background: ${({ theme }) => theme.COLOR.PRIMARY};
-    padding: 5px;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     width: ${({ theme }) => theme.DATA.ASIDE_WIDTH};
     a {

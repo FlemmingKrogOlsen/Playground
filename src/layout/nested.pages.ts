@@ -18,10 +18,10 @@ export const Url = styled.a.attrs({
 export const Editor = styled.div`
   position: absolute;
   top: 0px;
-  left: calc(100% + 10px);
+  left: calc(100% + 1rem);
   width: ${({ theme }) => theme.DATA.ASIDE_WIDTH};
   margin: 0 auto;
-  padding: 10px;
+  padding: 0.5rem;
   text-align: center;
   color: ${({ theme }) => theme.COLOR.TEXT};
   background: ${({ theme }) => theme.COLOR.PRIMARY};
