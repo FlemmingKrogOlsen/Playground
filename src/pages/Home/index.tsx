@@ -14,6 +14,10 @@ const Home = () => (
     <Container>
       <FlipCard title="Welcome to My Playground">
         No clue what to put here
+        <br/>
+        <br/>
+        <br/>
+        best color #123456
       </FlipCard>
     </Container>
   </Main>
