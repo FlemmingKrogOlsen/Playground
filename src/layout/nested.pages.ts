@@ -46,7 +46,7 @@ export const EditorItem = styled.div`
 `;
 
 export const EditorItemLarge = styled(EditorItem)`
-  height: calc(100vh - ${reduceSize}px - 78px);
+  height: calc(100vh - ${reduceSize}px - 74px);
   overflow-y: auto;
   ${scrollBarsCSS};
 `;
