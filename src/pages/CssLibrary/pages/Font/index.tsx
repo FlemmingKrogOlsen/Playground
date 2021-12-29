@@ -12,22 +12,16 @@ import {
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import Select from "nestedComponents/Select";
 import absoluteSize from "data/css/absolute-size";
-import { fontWeightOptions } from "data/css/options/font-weight";
-import { fontFamilyOptions } from "data/css/options/font-family";
-import {
-  previewWindowText,
-  fontSizeLengthText,
-  fontSizeLargerSmallerText,
-  fontWeightBolder,
-  fontWeightLighter,
-  fontWeightRelativeWeights,
-  fontWeightAccessibilityConcerns,
-} from "./data.text";
+
+import { texts } from "./data/text";
+import { fontWeightOptions } from "./data/font-weight";
+import { fontFamilyOptions } from "./data/font-family";
 
 const FontPage = () => {
   const [fontSize, setFontSize] = useState<string>("medium");
   const [fontWeight, setFontWeight] = useState<string>("400");
   const [fontFamily, setFontFamily] = useState<string>("Montserrat");
+
   const cssString = `.container {
   font-size: ${fontSize};
   font-weight: ${fontWeight};
@@ -38,31 +32,34 @@ const FontPage = () => {
 
   return (
     <>
+      {/* Preview Window */}
       <Section border shadow title="Preview Window">
         <Container>
           <Box>
             <Text options={{ fontSize, fontWeight, fontFamily }}>
-              {previewWindowText}
+              {texts.previewWindowText}
             </Text>
           </Box>
         </Container>
       </Section>
 
+      {/* Section: font-size */}
       <Section
         border
         shadow
         title="font-size"
         component={<MDNLink name="font-size" value={fontSize} />}
       >
-        <Info type={infoTypes.info}>{fontSizeLengthText}</Info>
+        <Info type={infoTypes.info}>{texts.fontSizeLengthText}</Info>
         {(fontSize === "larger" || fontSize === "smaller") && (
           <Info type={infoTypes.info}>
             <h2>larger, smaller</h2>
-            <p>{fontSizeLargerSmallerText}</p>
+            <p>{texts.fontSizeLargerSmallerText}</p>
           </Info>
         )}
       </Section>
 
+      {/* Section: font-weight */}
       <Section
         border
         shadow
@@ -74,30 +71,41 @@ const FontPage = () => {
             {fontWeight === "lighter" && (
               <div>
                 <h2>lighter</h2>
-                {fontWeightLighter}
+                {texts.fontWeightLighter}
               </div>
             )}
             {fontWeight === "bolder" && (
               <div>
                 <h2>bolder</h2>
-                {fontWeightBolder}
+                {texts.fontWeightBolder}
               </div>
             )}
             <div>
               <br />
               <h2>Meaning of relative weights</h2>
-              {fontWeightRelativeWeights}
+              {texts.fontWeightRelativeWeights}
             </div>
           </Info>
         )}
         {(fontWeight === "100" || fontWeight === "200") && (
           <Info type={infoTypes.danger}>
             <h2>Accessibility concerns</h2>
-            {fontWeightAccessibilityConcerns}
+            {texts.fontWeightAccessibilityConcerns}
           </Info>
         )}
       </Section>
 
+      {/* Section: font-family */}
+      <Section
+        border
+        shadow
+        title="font-family"
+        component={<MDNLink name="font-family" value={fontFamily} />}
+      >
+        <></>
+      </Section>
+
+      {/* Aside Editor */}
       <Editor>
         <InputField>
           <label htmlFor="fontSize">font-size</label>
