@@ -1,0 +1,1 @@
+export const sizes: string[] = ["0.25rem", "0.5rem", "0.75rem", "1rem", "2rem"];
