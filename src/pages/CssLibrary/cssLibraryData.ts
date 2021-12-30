@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import BorderPage, { borderSearchableTags } from "./pages/Border";
+import BoxSizingPage, { boxSizingSearchableTags } from "./pages/BoxSizing";
 import FlexBoxPage, { flexboxSearchableTags } from "./pages/FlexBox";
 import FontPage, { fontSearchableTags } from "./pages/Font";
 import TextAlignPage, { textAlignSearchableTags } from "./pages/TextAlign";
@@ -36,6 +37,12 @@ let componentPages: ComponentPage[] = [
     name: "Font",
     component: FontPage,
     tags: fontSearchableTags,
+  },
+  {
+    id: 5,
+    name: "Box Sizing",
+    component: BoxSizingPage,
+    tags: boxSizingSearchableTags,
   },
 ];
 
