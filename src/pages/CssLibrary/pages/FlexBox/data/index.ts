@@ -18,4 +18,19 @@ const justifyOptions: string[] = [
   "space-evenly",
 ];
 
-export { flexDirections, alignment, justifyOptions, sizes };
+const flexboxSearchableTags: string[] = [
+  "flexbox",
+  "display: flex",
+  "flex-direction",
+  "gap",
+  "justify-content",
+  "align-items",
+];
+
+export {
+  flexDirections,
+  alignment,
+  justifyOptions,
+  sizes,
+  flexboxSearchableTags,
+};

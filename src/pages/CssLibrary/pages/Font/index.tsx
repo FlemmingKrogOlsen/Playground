@@ -16,6 +16,7 @@ import {
   fontFamilyOptions,
   texts,
   absoluteSize,
+  fontSearchableTags,
 } from "./data";
 
 const FontPage = () => {
@@ -149,3 +150,4 @@ const FontPage = () => {
 };
 
 export default FontPage;
+export { fontSearchableTags };

@@ -11,7 +11,13 @@ import {
 import Select from "componentsNested/Select";
 import MDNLink from "componentsNested/MDNLink";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
-import { flexDirections, justifyOptions, alignment, sizes } from "./data";
+import {
+  flexDirections,
+  justifyOptions,
+  alignment,
+  sizes,
+  flexboxSearchableTags,
+} from "./data";
 
 const FlexBoxPage = () => {
   const [direction, setDirection] = useState<string>("row");
@@ -19,7 +25,7 @@ const FlexBoxPage = () => {
   const [justify, setJustify] = useState<string>("center");
   const [align, setAlign] = useState<string>("center");
 
-  const cssString = `.container {
+  const text = `.container {
   display: flex;
   flex-direction: ${direction};
   gap: ${gap};
@@ -163,12 +169,13 @@ const FlexBoxPage = () => {
         </InputField>
 
         <EditorItem>
-          <pre>{cssString}</pre>
+          <pre>{text}</pre>
         </EditorItem>
-        <ButtonCopyClipboard text={cssString} />
+        <ButtonCopyClipboard text={text} />
       </Editor>
     </>
   );
 };
 
 export default FlexBoxPage;
+export { flexboxSearchableTags };

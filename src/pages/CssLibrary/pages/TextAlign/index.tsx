@@ -12,7 +12,7 @@ import {
 } from "layout/nested.pages";
 import Select from "componentsNested/Select";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
-import { textAlignOptions } from "./data";
+import { textAlignOptions, textAlignSearchableTags } from "./data";
 
 const TextAlignPage = () => {
   const [align, setAlign] = useState<string>("start");
@@ -134,3 +134,4 @@ const TextAlignPage = () => {
 };
 
 export default TextAlignPage;
+export { textAlignSearchableTags };

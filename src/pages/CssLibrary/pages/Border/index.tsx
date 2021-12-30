@@ -12,7 +12,7 @@ import {
 import MDNLink from "componentsNested/MDNLink";
 import Select from "componentsNested/Select";
 import { Container, BoxBorder } from "./styled";
-import { borderStyleOptions, sizes, text } from "./data";
+import { borderStyleOptions, sizes, text, borderSearchableTags } from "./data";
 
 const BorderPage = () => {
   const [borderWidth, setBorderWidth] = useState<string>("0.5rem");
@@ -149,3 +149,4 @@ const BorderPage = () => {
 };
 
 export default BorderPage;
+export { borderSearchableTags };
