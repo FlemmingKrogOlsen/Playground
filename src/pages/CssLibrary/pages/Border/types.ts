@@ -4,6 +4,5 @@ export interface BoxBorderProps {
     borderColor: string;
     borderStyle: string;
     borderRadius: string;
-    borderRadiusSingle: string;
   };
 }

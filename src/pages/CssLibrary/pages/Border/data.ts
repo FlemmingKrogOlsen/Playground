@@ -1,4 +1,5 @@
 import { sizes } from "data/css/defaultSizes";
+import { text } from "./text";
 
 const borderStyleOptions: string[] = [
   "dotted",
@@ -11,12 +12,4 @@ const borderStyleOptions: string[] = [
   "outset",
 ];
 
-const borderRadiusTopLeft: string[] = [
-  "1rem 1rem",
-  "2rem 1rem",
-  "3rem 1rem",
-  "3rem 1.5rem",
-  "3rem 2rem",
-];
-
-export { borderRadiusTopLeft, borderStyleOptions, sizes };
+export { borderStyleOptions, sizes, text };

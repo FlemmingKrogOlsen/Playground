@@ -21,5 +21,7 @@ export const BoxBorder = styled.div<BoxBorderProps>`
   border-style: ${(props) => props.options.borderStyle};
   border-color: ${(props) => props.options.borderColor};
   border-radius: ${(props) => props.options.borderRadius};
-  border-top-left-radius: ${(props) => props.options.borderRadiusSingle};
+  > div {
+    text-align: center;
+  }
 `;
