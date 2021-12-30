@@ -1,4 +1,4 @@
-import absoluteSize from "data/css/absolute-size";
+import absoluteSize from "./absolute-size";
 import { fontFamilyOptions } from "./font-family";
 import { fontWeightOptions } from "./font-weight";
 import { texts } from "./text";
