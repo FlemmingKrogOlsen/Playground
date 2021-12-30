@@ -19,6 +19,9 @@ const DragNDropPage = () => {
   return (
     <>
       <DragNDrop list={data} onListChange={setData} groupWidth={200} />
+      <br />
+      <br />
+      <p style={{textAlign:"center"}}>Still have 1 issue, the not-allowed cursor on drag :(</p>
       <Editor>
         <EditorItem>
           <pre>{text}</pre>
