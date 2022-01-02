@@ -4,6 +4,7 @@ import BorderPage, { borderSearchableTags } from "./pages/Border";
 import BoxSizingPage, { boxSizingSearchableTags } from "./pages/BoxSizing";
 import FlexBoxPage, { flexboxSearchableTags } from "./pages/FlexBox";
 import FontPage, { fontSearchableTags } from "./pages/Font";
+import ShadowsPage, { shadowsSearchableTags } from "./pages/Shadows";
 import TextAlignPage, { textAlignSearchableTags } from "./pages/TextAlign";
 
 interface ComponentPage {
@@ -43,6 +44,12 @@ let componentPages: ComponentPage[] = [
     name: "Box Sizing",
     component: BoxSizingPage,
     tags: boxSizingSearchableTags,
+  },
+  {
+    id: 6,
+    name: "Shadows",
+    component: ShadowsPage,
+    tags: shadowsSearchableTags,
   },
 ];
 
