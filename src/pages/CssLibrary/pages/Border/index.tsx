@@ -12,17 +12,17 @@ import {
 import MDNLink from "componentsNested/MDNLink";
 import Select from "componentsNested/Select";
 import { Container, BoxBorder } from "./styled";
-import { borderStyleOptions, sizes, text, borderSearchableTags } from "./data";
+import { borderStyleOptions, text, borderSearchableTags } from "./data";
 
 const BorderPage = () => {
-  const [borderWidth, setBorderWidth] = useState<string>("0.5rem");
+  const [borderWidth, setBorderWidth] = useState<string>("8");
   const borderColor = "steelblue";
   const [borderStyle, setBorderStyle] = useState<string>("solid");
-  const [borderRadius, setBorderRadius] = useState<string>("1rem");
+  const [borderRadius, setBorderRadius] = useState<string>("8");
 
   const cssString = `.container {
-  border: ${borderStyle} ${borderWidth} ${borderColor};
-  border-radius: ${borderRadius} ${borderRadius} ${borderRadius} ${borderRadius};
+  border: ${borderStyle} ${borderWidth}px ${borderColor};
+  border-radius: ${borderRadius}px ${borderRadius}px ${borderRadius}px ${borderRadius}px;
 }`;
 
   return (
@@ -59,10 +59,10 @@ const BorderPage = () => {
         <Info type={infoTypes.info}>
           <h3>{text.borderHeader}</h3>
           <p>
-            border-top: {borderStyle} {borderWidth} {borderColor};<br />
-            border-right: {borderStyle} {borderWidth} {borderColor};<br />
-            border-bottom: {borderStyle} {borderWidth} {borderColor};<br />
-            border-left: {borderStyle} {borderWidth} {borderColor};<br />
+            border-top: {borderStyle} {borderWidth}px {borderColor};<br />
+            border-right: {borderStyle} {borderWidth}px {borderColor};<br />
+            border-bottom: {borderStyle} {borderWidth}px {borderColor};<br />
+            border-left: {borderStyle} {borderWidth}px {borderColor};<br />
           </p>
         </Info>
       </Section>
@@ -76,25 +76,25 @@ const BorderPage = () => {
         <Info type={infoTypes.info}>
           <h3>{text.borderRadiusHeader}</h3>
           <h4>{text.borderRadiusHeaderSub}</h4>
-          <br/>
+          <br />
           <h4>{text.borderRadiusSub1}</h4>
           <pre>
-            border-top-left-radius: {borderRadius};<br />
-            border-top-right-radius: {borderRadius};<br />
-            border-bottom-left-radius: {borderRadius};<br />
-            border-bottom-right-radius: {borderRadius};<br />
+            border-top-left-radius: {borderRadius}px;<br />
+            border-top-right-radius: {borderRadius}px;<br />
+            border-bottom-left-radius: {borderRadius}px;<br />
+            border-bottom-right-radius: {borderRadius}px;<br />
           </pre>
           <br />
           <h4>{text.borderRadiusSub1}</h4>
           <i>start-start = top-left, end-end = bottom-right</i>
           <pre>
-            border-start-start-radius: {borderRadius};
+            border-start-start-radius: {borderRadius}px;
             <br />
-            border-start-end-radius: {borderRadius};
+            border-start-end-radius: {borderRadius}px;
             <br />
-            border-end-start-radius: {borderRadius};
+            border-end-start-radius: {borderRadius}px;
             <br />
-            border-end-end-radius: {borderRadius};
+            border-end-end-radius: {borderRadius}px;
             <br />
           </pre>
         </Info>
@@ -114,11 +114,14 @@ const BorderPage = () => {
 
         <InputField>
           <label htmlFor="borderWidth">width</label>
-          <Select
+          <input
+            id="borderWidth"
+            type="range"
+            min="0"
+            max="16"
+            step="4"
             value={borderWidth}
             onChange={(e) => setBorderWidth(e.target.value)}
-            options={sizes}
-            id="borderWidth"
           />
         </InputField>
 
@@ -129,13 +132,14 @@ const BorderPage = () => {
 
         <InputField>
           <label htmlFor="borderRadius">radius</label>
-          <Select
-            value={borderRadius}
-            onChange={(e) => {
-              setBorderRadius(e.target.value);
-            }}
-            options={sizes}
+          <input
             id="borderRadius"
+            type="range"
+            min="0"
+            max="64"
+            step="8"
+            value={borderRadius}
+            onChange={(e) => setBorderRadius(e.target.value)}
           />
         </InputField>
 

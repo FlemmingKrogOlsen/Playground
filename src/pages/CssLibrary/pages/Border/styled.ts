@@ -17,10 +17,10 @@ export const BoxBorder = styled.div<BoxBorderProps>`
   font-size: 1.25rem;
   background: ${({ theme }) => theme.COLOR.PRIMARY};
   color: ${({ theme }) => theme.COLOR.TEXT};
-  border-width: ${(props) => props.options.borderWidth};
+  border-width: ${(props) => props.options.borderWidth}px;
   border-style: ${(props) => props.options.borderStyle};
   border-color: ${(props) => props.options.borderColor};
-  border-radius: ${(props) => props.options.borderRadius};
+  border-radius: ${(props) => props.options.borderRadius}px;
   > div {
     text-align: center;
   }

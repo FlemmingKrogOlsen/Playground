@@ -1,4 +1,3 @@
-import { sizes } from "data/css/defaultSizes";
 import { text } from "./text";
 
 const borderStyleOptions: string[] = [
@@ -44,4 +43,4 @@ const borderSearchableTags: string[] = [
   "border-bottom-right-radius",
 ];
 
-export { borderStyleOptions, sizes, text, borderSearchableTags };
+export { borderStyleOptions, text, borderSearchableTags };
