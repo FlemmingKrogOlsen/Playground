@@ -1,11 +1,28 @@
+import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import Modal from "components/Modal";
+import { Editor, EditorItem } from "layout/nested.pages";
 import { useState } from "react";
+
+const text = `const [show, setShow] = useState(false);
+
+<button onClick={() => setShow(true)}>
+  open modal
+</button>
+
+<Modal 
+  title="Modal Header" 
+  show={show} 
+  onClose={() => setShow(false)}
+>
+  Content goes here
+</Modal>
+`;
 
 const ModalPage = () => {
   const [show, setShow] = useState(false);
   return (
     <>
-      <button onClick={() => setShow(!show)}>open modal</button>
+      <button onClick={() => setShow(true)}>open modal</button>
       <Modal title="Modal Header" show={show} onClose={() => setShow(false)}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit corrupti
         dolorem ipsam quas reiciendis neque earum reprehenderit nulla sunt
@@ -20,6 +37,12 @@ const ModalPage = () => {
         culpa, cupiditate perferendis eius veritatis! Asperiores tempore dolor,
         voluptates accusantium quas quaerat?
       </Modal>
+      <Editor>
+      <EditorItem>
+        <pre>{text}</pre>
+      </EditorItem>
+      <ButtonCopyClipboard text={text} />
+      </Editor>
     </>
   );
 };
