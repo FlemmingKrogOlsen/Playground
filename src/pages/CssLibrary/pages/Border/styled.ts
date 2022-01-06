@@ -25,3 +25,4 @@ export const BoxBorder = styled.div<BoxBorderProps>`
     text-align: center;
   }
 `;
+

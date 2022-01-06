@@ -13,6 +13,7 @@ import MDNLink from "componentsNested/MDNLink";
 import Select from "componentsNested/Select";
 import { Container, BoxBorder } from "./styled";
 import { borderStyleOptions, text, borderSearchableTags } from "./data";
+import { InputRange } from "componentsNested/InputRange";
 
 const BorderPage = () => {
   const [borderWidth, setBorderWidth] = useState<string>("8");
@@ -114,9 +115,8 @@ const BorderPage = () => {
 
         <InputField>
           <label htmlFor="borderWidth">width</label>
-          <input
+          <InputRange
             id="borderWidth"
-            type="range"
             min="0"
             max="16"
             step="4"
@@ -132,9 +132,8 @@ const BorderPage = () => {
 
         <InputField>
           <label htmlFor="borderRadius">radius</label>
-          <input
+          <InputRange
             id="borderRadius"
-            type="range"
             min="0"
             max="64"
             step="8"
