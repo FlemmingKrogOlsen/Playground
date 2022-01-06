@@ -1,7 +1,6 @@
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import Section from "components/Section";
 import Select from "componentsNested/Select";
-import { sizes } from "data/css/defaultSizes";
 import { numbers } from "data/css/numbers";
 import { Editor, EditorItem, InputField } from "layout/nested.pages";
 import { useState } from "react";
