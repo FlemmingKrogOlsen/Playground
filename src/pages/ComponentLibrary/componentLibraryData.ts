@@ -16,6 +16,7 @@ import FormElements from "./pages/FormElements";
 import ButtonsPage from "./pages/ButtonsPage";
 import CustomTablePage from "./pages/CustomTablePage";
 import RadioCardsPage from "./pages/RadioCardsPage";
+import ModalPage from "./pages/Modal";
 
 interface ComponentPage {
   id: number;
@@ -120,6 +121,12 @@ let componentPages: ComponentPage[] = [
     name: "Radio Cards",
     github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/RadioCards",
     component: RadioCardsPage,
+  },
+  {
+    id: 17,
+    name: "Modal Page",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Modal",
+    component: ModalPage,
   },
 ];
 
