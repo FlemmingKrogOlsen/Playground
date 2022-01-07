@@ -1,16 +1,15 @@
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import Section from "components/Section";
-import Select from "componentsNested/Select";
-import { numbers } from "data/css/numbers";
+import { InputRange } from "componentsNested/InputRange";
 import { Editor, EditorItem, InputField } from "layout/nested.pages";
 import { useState } from "react";
 import { shadowsSearchableTags } from "./data";
 import { Container, ShadowText } from "./styled";
 
 const ShadowsPage = () => {
-  const [offsetX, setOffsetX] = useState("3px");
-  const [offsetY, setOffsetY] = useState("3px");
-  const [blurRadius, setBlurRadius] = useState("3px");
+  const [offsetX, setOffsetX] = useState(3);
+  const [offsetY, setOffsetY] = useState(3);
+  const [blurRadius, setBlurRadius] = useState(3);
 
   const cssString = `.container {
     text-shadow: ${offsetX} ${offsetY} ${blurRadius} black;
@@ -19,39 +18,49 @@ const ShadowsPage = () => {
     <>
       <Section border shadow title="Preview Window">
         <Container>
-          <ShadowText offsetX={offsetX} offsetY={offsetY} blurRadius={blurRadius}>
+          <ShadowText
+            offsetX={offsetX}
+            offsetY={offsetY}
+            blurRadius={blurRadius}
+          >
             Text-Shadow
           </ShadowText>
         </Container>
       </Section>
       <Editor>
         <InputField>
-          <label htmlFor="offsetX">offset-x</label>
-          <Select
-            value={offsetX}
-            onChange={(e) => setOffsetX(e.target.value)}
-            options={numbers}
+          <label htmlFor="offsetX">offsetX</label>
+          <InputRange
             id="offsetX"
+            min="-5"
+            max="5"
+            step="1"
+            value={offsetX}
+            onChange={(e) => setOffsetX(Number(e.target.value))}
           />
         </InputField>
 
         <InputField>
           <label htmlFor="offsetY">offset-y</label>
-          <Select
-            value={offsetY}
-            onChange={(e) => setOffsetY(e.target.value)}
-            options={numbers}
+          <InputRange
             id="offsetY"
+            min="-5"
+            max="5"
+            step="1"
+            value={offsetY}
+            onChange={(e) => setOffsetY(Number(e.target.value))}
           />
         </InputField>
 
         <InputField>
           <label htmlFor="blurRadius">blur-radius</label>
-          <Select
-            value={blurRadius}
-            onChange={(e) => setBlurRadius(e.target.value)}
-            options={numbers}
+          <InputRange
             id="blurRadius"
+            min="0"
+            max="10"
+            step="1"
+            value={blurRadius}
+            onChange={(e) => setBlurRadius(Number(e.target.value))}
           />
         </InputField>
 

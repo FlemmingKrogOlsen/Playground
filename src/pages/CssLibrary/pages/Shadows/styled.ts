@@ -7,16 +7,16 @@ export const Container = styled.div`
 `;
 
 type TextShadow = {
-  offsetX: string;
-  offsetY: string;
-  blurRadius: string;
+  offsetX: number;
+  offsetY: number;
+  blurRadius: number;
 };
 
 export const ShadowText = styled.div<TextShadow>`
   padding: 5px 10px;
   font-size: 3rem;
   font-weight: bold;
-  text-shadow: ${(props) => props.offsetX} ${(props) => props.offsetY}
-    ${(props) => props.blurRadius} black;
+  text-shadow: ${(props) => props.offsetX}px ${(props) => props.offsetY}px
+    ${(props) => props.blurRadius}px black;
   color: lightgray;
 `;
