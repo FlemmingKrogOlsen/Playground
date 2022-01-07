@@ -1,6 +1,6 @@
 type ContainerProps = {
   direction: string;
-  gap: string;
+  gap: number;
 };
 
 type IBox = {

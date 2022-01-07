@@ -1,5 +1,3 @@
-import { sizes } from "data/css/defaultSizes";
-
 const flexDirections: string[] = [
   "row",
   "row-reverse",
@@ -27,10 +25,4 @@ const flexboxSearchableTags: string[] = [
   "align-items",
 ];
 
-export {
-  flexDirections,
-  alignment,
-  justifyOptions,
-  sizes,
-  flexboxSearchableTags,
-};
+export { flexDirections, alignment, justifyOptions, flexboxSearchableTags };

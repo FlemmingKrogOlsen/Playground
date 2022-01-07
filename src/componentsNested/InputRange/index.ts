@@ -72,7 +72,7 @@ export const InputRange = styled.input.attrs({
     content: "${(props) => props.value}";
     display: block;
     align-self: center;
-    min-width: 30px;
+    min-width: 40px;
     height: 1rem;
     background: #123456;
     text-align: center;

@@ -15,20 +15,20 @@ import {
   flexDirections,
   justifyOptions,
   alignment,
-  sizes,
   flexboxSearchableTags,
 } from "./data";
+import { InputRange } from "componentsNested/InputRange";
 
 const FlexBoxPage = () => {
   const [direction, setDirection] = useState<string>("row");
-  const [gap, setGap] = useState<string>("0.5rem");
+  const [gap, setGap] = useState<number>(0.5);
   const [justify, setJustify] = useState<string>("center");
   const [align, setAlign] = useState<string>("center");
 
   const text = `.container {
   display: flex;
   flex-direction: ${direction};
-  gap: ${gap};
+  gap: ${gap}rem;
 }
 
 .box1 {
@@ -140,11 +140,13 @@ const FlexBoxPage = () => {
 
         <InputField>
           <label htmlFor="gap">gap</label>
-          <Select
-            value={gap}
-            onChange={(e) => setGap(e.target.value)}
-            options={sizes}
+          <InputRange
             id="gap"
+            min="0"
+            max="2"
+            step="0.25"
+            value={gap}
+            onChange={(e) => setGap(Number(e.target.value))}
           />
         </InputField>
 
