@@ -34,7 +34,7 @@ const Container = styled.div<ShowType>`
     0 5px 10px 0 hsla(0, 0%, 0%, 0.2);
   padding: 1rem;
   border-radius: 0.5rem;
-  z-index: 1;
+  z-index: 101;
   background: white;
   opacity: ${({ show }) => (show ? 1 : 0)};
   transition: opacity 1s ease-in-out;
@@ -46,11 +46,13 @@ const Overlay = styled.div<ShowType>`
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 100;
   background: rgba(0, 0, 0, 0.5);
   transform: scale(${({ show }) => (show ? 1 : 0)});
   opacity: ${({ show }) => (show ? 1 : 0)};
   transition: opacity 1s ease-in-out;
   pointer-events: ${({ show }) => (show ? "all" : "none")};
+  backdrop-filter: blur(0.25rem);
 `;
 
 
