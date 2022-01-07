@@ -1,3 +1,4 @@
+import Button from "components/Button";
 import ButtonCopyClipboard from "components/Button/ButtonCopyClipboard";
 import Modal from "components/Modal";
 import { Editor, EditorItem } from "layout/nested.pages";
@@ -22,7 +23,27 @@ const ModalPage = () => {
   const [show, setShow] = useState(false);
   return (
     <>
-      <button onClick={() => setShow(true)}>open modal</button>
+      <Button
+        title="open modal"
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+            />
+          </svg>
+        }
+        onClick={() => setShow(true)}
+      />
+
+      {/* <Button onClick={() => setShow(true)}>open modal</Button> */}
       <Modal title="Modal Header" show={show} onClose={() => setShow(false)}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit corrupti
         dolorem ipsam quas reiciendis neque earum reprehenderit nulla sunt
@@ -38,10 +59,10 @@ const ModalPage = () => {
         voluptates accusantium quas quaerat?
       </Modal>
       <Editor>
-      <EditorItem>
-        <pre>{text}</pre>
-      </EditorItem>
-      <ButtonCopyClipboard text={text} />
+        <EditorItem>
+          <pre>{text}</pre>
+        </EditorItem>
+        <ButtonCopyClipboard text={text} />
       </Editor>
     </>
   );
