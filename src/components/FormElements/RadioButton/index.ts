@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { colors } from "./colors";
+import { colors } from "../colors";
 
-const CustomRadio = styled.div`
+const RadioButton = styled.div`
   display: block;
   position: relative;
   padding-left: 40px;
@@ -25,6 +25,10 @@ const CustomRadio = styled.div`
     }
     &:checked ~ span:after {
       display: block;
+    }
+    &[disabled] ~ span {
+      background: lightgray;
+      cursor: not-allowed;
     }
   }
 
@@ -59,4 +63,4 @@ const CustomRadio = styled.div`
   }
 `;
 
-export default CustomRadio;
+export default RadioButton;

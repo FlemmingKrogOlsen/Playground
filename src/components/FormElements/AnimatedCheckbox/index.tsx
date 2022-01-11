@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Label, Input, Span, SVG } from "./animCheckBox.styled";
+import { Label, Input, Span, SVG } from "./styled";
 
 type InputProps = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,

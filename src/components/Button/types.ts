@@ -1,10 +1,11 @@
 type Common = {
   title: string
-  icon: React.ReactElement
+  icon?: React.ReactElement
+  type?: any
 }
 
 export interface IButton extends Common {
-  onClick: () => void
+  onClick?: () => void
 }
 
 export interface IButtonLink extends Common {
