@@ -48,16 +48,6 @@ export const Form = styled.form`
       }
     }
   }
-
-  /* Error */
-  /* p {
-    color: red;
-    font-size: 10px;
-    bottom: 50%;
-    position: absolute;
-    transform: translateY(50%);
-    left: 30px;
-  } */
 `;
 
 export const ErrorContainer = styled.section`

@@ -221,6 +221,7 @@ const FormElements = () => {
           <h3>Styled Components</h3>
           Text, Email, Date, Number, Radio
           <br />
+          <br />
           <h3>Custom Components</h3>
           CheckBox, Password, Range
           <br />
