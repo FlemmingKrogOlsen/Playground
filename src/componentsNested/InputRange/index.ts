@@ -18,7 +18,7 @@ const thumbFocus = css`
   outline-offset: 0.125rem;
 `;
 
-const offsetSlider = "0.1rem";
+const offsetSlider = "0.125rem";
 
 export const InputRange = styled.input.attrs({
   type: "range",
