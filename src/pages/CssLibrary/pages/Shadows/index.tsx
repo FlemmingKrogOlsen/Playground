@@ -12,7 +12,7 @@ const ShadowsPage = () => {
   const [blurRadius, setBlurRadius] = useState(3);
 
   const cssString = `.container {
-    text-shadow: ${offsetX} ${offsetY} ${blurRadius} black;
+    text-shadow: ${offsetX}px ${offsetY}px ${blurRadius}px black;
   }`;
   return (
     <>
