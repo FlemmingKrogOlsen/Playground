@@ -17,6 +17,7 @@ import ButtonsPage from "./pages/ButtonsPage";
 import CustomTablePage from "./pages/CustomTablePage";
 import RadioCardsPage from "./pages/RadioCardsPage";
 import ModalPage from "./pages/Modal";
+import BannerPage from "./pages/Banner";
 
 interface ComponentPage {
   id: number;
@@ -127,6 +128,12 @@ let componentPages: ComponentPage[] = [
     name: "Modal Page",
     github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Modal",
     component: ModalPage,
+  },
+  {
+    id: 18,
+    name: "Banner Image",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Banner",
+    component: BannerPage,
   },
 ];
 
