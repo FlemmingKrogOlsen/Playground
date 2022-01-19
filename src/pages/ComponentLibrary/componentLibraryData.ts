@@ -18,6 +18,7 @@ import CustomTablePage from "./pages/CustomTablePage";
 import RadioCardsPage from "./pages/RadioCardsPage";
 import ModalPage from "./pages/Modal";
 import BannerPage from "./pages/Banner";
+import GaugeMeterPage from "./pages/GaugeMeterPage";
 
 interface ComponentPage {
   id: number;
@@ -134,6 +135,12 @@ let componentPages: ComponentPage[] = [
     name: "Banner Image",
     github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/Banner",
     component: BannerPage,
+  },
+  {
+    id: 19,
+    name: "Gauge Meter",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/GaugeMeter",
+    component: GaugeMeterPage,
   },
 ];
 
