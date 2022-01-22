@@ -1,4 +1,4 @@
-function BrowserDetect() {
+function getBrowser() {
   const browserName = (function (agent) {
     switch (true) {
       case agent.indexOf("edge") > -1:
@@ -23,4 +23,4 @@ function BrowserDetect() {
   return browserName;
 }
 
-export default BrowserDetect;
+export default getBrowser;

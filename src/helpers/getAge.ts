@@ -1,4 +1,4 @@
-function fnCalculateAge(value: string):number {
+function getAge(value: string):number {
     const birthDate = new Date(value);
     const difference = Date.now() - birthDate.getTime();
     const ageDate = new Date(difference);
@@ -6,4 +6,4 @@ function fnCalculateAge(value: string):number {
     return calculatedAge;
   }
 
-  export default fnCalculateAge;
+  export default getAge;

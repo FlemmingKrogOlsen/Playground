@@ -9,18 +9,20 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const Home = () => (
-  <Main color="transparent">
-    <Container>
-      <FlipCard title="Welcome to My Playground">
-        No clue what to put here
-        <br/>
-        <br/>
-        <br/>
-        best color #123456
-      </FlipCard>
-    </Container>
-  </Main>
-);
+const Home = () => {
+  return (
+    <Main color="transparent">
+      <Container>
+        <FlipCard title="Welcome to My Playground">
+          No clue what to put here
+          <br />
+          <br />
+          <br />
+          best color #123456
+        </FlipCard>
+      </Container>
+    </Main>
+  );
+};
 
 export default Home;

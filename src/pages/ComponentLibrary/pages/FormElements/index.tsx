@@ -11,7 +11,7 @@ import Form, {
   Select,
   TextArea,
 } from "components/FormElements";
-import fnCalculateAge from "helpers/calculateAge";
+import getAge from "helpers/getAge";
 import Button from "components/Button";
 import { ErrorContainer } from "components/FormElements/StyledForm";
 import isEmpty from "helpers/isEmpty";
@@ -37,7 +37,7 @@ const FormElements = () => {
   const preloadedValues = {
     developer: true,
     name: "Flemming Krog Olsen",
-    age: fnCalculateAge(DoB),
+    age: getAge(DoB),
     email: "flemming@krogolsen.dk",
     date: DoB,
     password: "password",

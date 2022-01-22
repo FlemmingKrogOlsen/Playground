@@ -1,7 +1,7 @@
+import setValueFormat from "helpers/setValueFormat";
 import { FC, ReactElement } from "react";
 import { Table, THead, TBody, TFoot, TotalTd, Title } from "./styled";
 import { IProps } from "./types";
-import FormatDKK from "../../helpers/format_dkk";
 
 const TableWithSum: FC<IProps> = ({ data, sum, total, title }): ReactElement => {
   const ColCount: number = (data && data.headers.length) || 0;
@@ -48,9 +48,9 @@ const TableWithSum: FC<IProps> = ({ data, sum, total, title }): ReactElement => 
           <tr key={index}>
             <td>{row.title}</td>
             {row.values.map((cell, cellindex) => {
-              return <td key={cellindex}>{FormatDKK(cell || 0, 2)}</td>;
+              return <td key={cellindex}>{setValueFormat(cell || 0, 2)}</td>;
             })}
-            {total && <TotalTd>{FormatDKK(getRowTotal(row.values), 2)}</TotalTd>}
+            {total && <TotalTd>{setValueFormat(getRowTotal(row.values), 2)}</TotalTd>}
           </tr>
         ))}
       </TBody>
@@ -60,9 +60,9 @@ const TableWithSum: FC<IProps> = ({ data, sum, total, title }): ReactElement => 
           <tr>
             <td>SUM</td>
             {[...Array(ColCount - 1)].map((_, i: number) => (
-              <td key={i}>{FormatDKK(getColumnTotal(i), 2)}</td>
+              <td key={i}>{setValueFormat(getColumnTotal(i), 2)}</td>
             ))}
-            {sum && total && <td>{FormatDKK(getTotalSum(), 2)}</td>}
+            {sum && total && <td>{setValueFormat(getTotalSum(), 2)}</td>}
           </tr>
         </TFoot>
       )}
