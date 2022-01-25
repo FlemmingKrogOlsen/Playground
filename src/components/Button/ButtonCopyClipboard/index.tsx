@@ -1,8 +1,8 @@
 import Button from "components/Button";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 
-const ButtonCopyClipboard = ({ text }: { text: string }) => {
-  const [copied, setCopied] = useState(false);
+const ButtonCopyClipboard = ({ text }: Playground_ClipboardButtonProps): ReactElement => {
+  const [copied, setCopied] = useState<boolean>(false);
   return (
     <Button
       onClick={() => {
