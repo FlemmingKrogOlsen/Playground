@@ -19,6 +19,7 @@ import RadioCardsPage from "./pages/RadioCardsPage";
 import ModalPage from "./pages/Modal";
 import BannerPage from "./pages/Banner";
 import GaugeMeterPage from "./pages/GaugeMeterPage";
+import CountCardPage from "./pages/CountCard";
 
 interface ComponentPage {
   id: number;
@@ -141,6 +142,12 @@ let componentPages: ComponentPage[] = [
     name: "Gauge Meter",
     github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/GaugeMeter",
     component: GaugeMeterPage,
+  },
+  {
+    id: 20,
+    name: "Count Card",
+    github: "https://github.com/FlemmingKrogOlsen/Playground/tree/main/src/components/CountCard",
+    component: CountCardPage,
   },
 ];
 
