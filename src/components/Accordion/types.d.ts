@@ -1,7 +1,7 @@
 type Playground_Accordion_Item = {
   id: number;
   title: string;
-  content: FC;
+  content: React.FC;
   show: boolean;
 };
 
