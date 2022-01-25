@@ -10,14 +10,14 @@ const Container = styled.div`
   width: 100%;
   height: auto;
   overflow: hidden;
-  border: 2px solid ${colors.primary};
+  border: 2px solid ${colors.border};
   margin-bottom: 10px;
 `;
 
 const Title = styled.div`
   position: relative;
-  background-color: ${colors.primary};
-  color: ${colors.inactiveText};
+  background-color: ${colors.header.inactive.background};
+  color: ${colors.header.inactive.text};
   width: 100%;
   height: ${TitleBarHeight}px;
   font-size: 0.75rem;
@@ -43,21 +43,21 @@ const Content = styled.div`
   overflow: auto;
   position: relative;
   transition: margin 0.3s ease 0.1s;
-  color: ${colors.primary};
+  color: ${colors.content.textColor};
   height: ${PanelHeight}px;
   margin-bottom: -${PanelHeight}px;
   margin-right: 0;
   padding: 5px 10px;
   width: 100%;
-  background: ${colors.secondary};
+  background: ${colors.content.backgroundColor};
   &::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: ${colors.primary};
-    border: 2px solid ${colors.secondary};
+    background-color: ${colors.border};
+    border: 2px solid ${colors.content.backgroundColor};
   }
 `;
 
@@ -90,13 +90,13 @@ const RadioBtn = styled.input`
   }
 
   &:checked + ${Title} {
-    background-color: ${colors.primary};
+    background-color: ${colors.header.active.background};
     font-weight: bold;
-    color: white;
+    color: ${colors.header.active.text};
   }
 
   &:hover + ${Title} {
-    background-color: ${colors.hover};
+    background-color: ${colors.header.hover};
   }
 `;
 

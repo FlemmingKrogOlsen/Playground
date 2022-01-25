@@ -1,6 +1,20 @@
-export const colors: Palyground_Colors = {
-  primary: "#123456",
-  secondary: "#fff",
-  inactiveText: "#dadada",
-  hover: "steelblue",
+const primaryColor: string = "#123456";
+
+export const colors: Palyground_Accordion_Colors = {
+  border: primaryColor,
+  header: {
+    active: {
+      background: primaryColor,
+      text: "white",
+    },
+    inactive: {
+      background: primaryColor,
+      text: "#dadada",
+    },
+    hover: "steelblue",
+  },
+  content: {
+    backgroundColor: "#fff",
+    textColor: primaryColor,
+  },
 };
