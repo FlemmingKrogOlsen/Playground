@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { IRowLayout, ICol } from "./interfaces";
 
 const border = `2px solid #123456`;
 
@@ -50,7 +49,7 @@ export const TableHeader = styled.thead`
   }
 `;
 
-export const RowLayout = styled.tr<IRowLayout>`
+export const RowLayout = styled.tr<Playground_CustumTable_RowLayout>`
   font-weight: ${(props) => (props.header ? "bolder" : "normal")};
   td {
     padding: 10px;
@@ -134,7 +133,7 @@ export const Cell = styled.td`
   text-align: ${(props) => props.align};
 `;
 
-export const Col = styled.col<ICol>`
+export const Col = styled.col<Playground_CustumTable_Col>`
   ${(props) =>
     props.activeCol ? "background:" + colors.sort.backgroundColor : null};
 `;

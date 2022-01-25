@@ -1,6 +1,4 @@
-import { IHeader } from "components/CustomTable/interfaces";
-
-export const headers: Array<IHeader> = [
+export const headers: Array<Playground_CustumTable_Header> = [
   {
     title: "User ID",
     name: "id",
