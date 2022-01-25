@@ -1,34 +1,42 @@
-import styled from "styled-components";
-import Counter from "./counter";
-import { ICounter } from "./types";
+import { useEffect, useRef, useState, ReactElement } from "react";
+import { Container, Count, Text } from "./styled";
 
-const Container = styled.div`
-  width: 250px;
-  background-color: #f5f5f5;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px;
-`;
+export const Counter = ({
+  start = 0,
+  end,
+  duration = 10,
+}: Playground_CounterProps): number => {
+  const [state, setState] = useState<number>(start);
+  const ref = useRef<number>(start);
+  const accumulator: number = (end - start) / 200;
 
-const Count = styled.div`
-  color: #123456;
-  text-align: center;
-  height: 100%;
-  font-size: 2rem;
-  font-variant-numeric: tabular-nums;
-`;
+  const updateCounterState = () => {
+    if (ref.current < end) {
+      const result = Math.ceil(ref.current + accumulator);
+      if (result > end) return setState(end);
+      setState(result);
+      ref.current = result;
+    }
+    setTimeout(updateCounterState, duration * 5);
+  };
 
-const Text = styled.div`
-  color: #123456;
-  font-size: 1.25rem;
-  padding: 5px 10px;
-  text-align: center;
-`;
+  useEffect(() => {
+    let isMounted = true;
+    if (isMounted) updateCounterState();
+    return () => {
+      isMounted = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [end, start, duration]);
 
-const CountCard = ({ start = 0, end, duration = 10 }: ICounter) => {
+  return state;
+};
+
+const CountCard = ({
+  start = 0,
+  end,
+  duration = 10,
+}: Playground_CounterProps): ReactElement => {
   return (
     <Container>
       <Count>
