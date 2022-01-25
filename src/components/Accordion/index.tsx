@@ -1,8 +1,7 @@
 import { ReactElement, FC, Fragment, createElement } from 'react';
 import { Container, Title, Content, RadioBtn, Text } from './styled';
-import { IProps } from './types';
 
-const Accordion: FC<IProps> = ({ id, data }): ReactElement => {
+const Accordion: FC<Playground_AccordionProps> = ({ id, data }): ReactElement => {
   return (
     <Container>
       {data?.map((item) => (
