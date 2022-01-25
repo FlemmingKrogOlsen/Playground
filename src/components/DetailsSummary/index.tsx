@@ -1,8 +1,7 @@
-import { FC, ReactElement } from 'react';
-import { Title, Container, Content } from './styled';
-import { IProps } from './types';
+import { FC, ReactElement } from "react";
+import { Title, Container, Content } from "./styled";
 
-const DetailsSummary: FC<IProps> = ({
+const DetailsSummary: FC<Palyground_DetailsSummaryProps> = ({
   open,
   title,
   children,
