@@ -53,6 +53,7 @@ export const RowLayout = styled.tr<Playground_CustumTable_RowLayout>`
   font-weight: ${(props) => (props.header ? "bolder" : "normal")};
   td {
     padding: 10px;
+    font-variant-numeric: tabular-nums;
 
     &:first-child {
       padding-left: 10px;
