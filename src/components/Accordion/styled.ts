@@ -43,13 +43,13 @@ const Content = styled.div`
   overflow: auto;
   position: relative;
   transition: margin 0.3s ease 0.1s;
-  color: ${colors.content.textColor};
+  color: ${colors.body.text};
   height: ${PanelHeight}px;
   margin-bottom: -${PanelHeight}px;
   margin-right: 0;
   padding: 5px 10px;
   width: 100%;
-  background: ${colors.content.backgroundColor};
+  background: ${colors.body.background};
   &::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
@@ -57,7 +57,7 @@ const Content = styled.div`
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: ${colors.border};
-    border: 2px solid ${colors.content.backgroundColor};
+    border: 2px solid ${colors.body.background};
   }
 `;
 

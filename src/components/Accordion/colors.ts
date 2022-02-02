@@ -1,6 +1,8 @@
+import type { Colors } from "./types";
+
 const primaryColor: string = "#123456";
 
-export const colors: Palyground_Accordion_Colors = {
+export const colors: Colors = {
   border: primaryColor,
   header: {
     active: {
@@ -13,8 +15,8 @@ export const colors: Palyground_Accordion_Colors = {
     },
     hover: "steelblue",
   },
-  content: {
-    backgroundColor: "#fff",
-    textColor: primaryColor,
+  body: {
+    background: "#fff",
+    text: primaryColor,
   },
 };
