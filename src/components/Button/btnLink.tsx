@@ -1,7 +1,12 @@
 import { FC, ReactElement } from "react";
 import { StyledLink } from "./styled";
+import type { ButtonLinkProps } from "./types";
 
-const ButtonLink: FC<Playground_ButtonLinkProps> = ({ title, icon, url }): ReactElement => (
+const ButtonLink: FC<ButtonLinkProps> = ({
+  title,
+  icon,
+  url,
+}): ReactElement => (
   <StyledLink
     href={url}
     target={url.startsWith("http") ? "_blank" : "_self"}
