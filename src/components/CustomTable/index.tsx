@@ -9,8 +9,9 @@ import {
   Col,
 } from "./styled";
 import isMobile from "../../helpers/isMobile";
+import type { IProps, IHeader } from "./types";
 
-export const CustomTableHeader = (data: Array<Playground_CustumTable_Header>): ReactElement => (
+export const CustomTableHeader = (data: Array<IHeader>): ReactElement => (
   <TableHeader>
     <RowLayout header>
       {data &&
@@ -35,8 +36,8 @@ export const CustomTableHeader = (data: Array<Playground_CustumTable_Header>): R
 
 export const CustomTableContent = (
   data: Array<any>,
-  headers: Array<Playground_CustumTable_Header>
-): ReactElement[] => {
+  headers: Array<IHeader>
+): Array<ReactElement> => {
   return data.map((item, index: number) => (
     <TableBody key={index}>
       <RowLayout>
@@ -64,9 +65,12 @@ export const CustomTableContent = (
   ));
 };
 
-
-
-export const CustomTable: FC<Playground_CustumTableProps> = ({ headers, data, state, sortBy }): ReactElement => {
+export const CustomTable: FC<IProps> = ({
+  headers,
+  data,
+  state,
+  sortBy,
+}): ReactElement => {
   if (sortBy !== null) {
     data.sort((a, b) => {
       if (a[`${sortBy}`] < b[`${sortBy}`]) {
