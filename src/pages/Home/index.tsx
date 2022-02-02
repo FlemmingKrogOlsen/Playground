@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import FlipCard from "components/FlipCard";
 import { Main } from "layout/nested.styled";
+import useDoNotTrack from "helpers/useDoNotTrack";
+import useDarkMode from "helpers/isDarkMode";
 
 const Container = styled.div`
   display: flex;
@@ -14,11 +16,16 @@ const Home = () => {
     <Main color="transparent">
       <Container>
         <FlipCard title="Welcome to My Playground">
-          No clue what to put here
-          <br />
-          <br />
-          <br />
-          best color #123456
+          <div>
+            <h3>System Settings</h3>
+            <br />
+            Is 'Do Not Track' enabled
+            <br />
+            in your browser? {useDoNotTrack() ? "Yes" : `No`}
+            <br />
+            <br />
+            is 'Dark Mode' enabled? {useDarkMode() ? "Yes" : `No`}
+          </div>
         </FlipCard>
       </Container>
     </Main>
