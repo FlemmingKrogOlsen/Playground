@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState, ReactElement } from "react";
 import { Container, Count, Text } from "./styled";
+import type Props from "./types";
 
-export const Counter = ({
-  start = 0,
-  end,
-  duration = 10,
-}: Playground_CounterProps): number => {
+export const Counter = ({ start = 0, end, duration = 10 }: Props): number => {
   const [state, setState] = useState<number>(start);
   const ref = useRef<number>(start);
   const accumulator: number = (end - start) / 200;
@@ -32,11 +29,7 @@ export const Counter = ({
   return state;
 };
 
-const CountCard = ({
-  start = 0,
-  end,
-  duration = 10,
-}: Playground_CounterProps): ReactElement => {
+const CountCard = ({ start = 0, end, duration = 10 }: Props): ReactElement => {
   return (
     <Container>
       <Count>
