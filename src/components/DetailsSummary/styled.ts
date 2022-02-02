@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const colors = {
   primary: "#123456",
   secondary: "#fff",
-}
+};
 
-const animSpeed = '0.5s';
+const animSpeed = "0.5s";
 
 const Title = styled.summary`
   padding: 10px 0px;
@@ -23,7 +23,7 @@ const Title = styled.summary`
     position: absolute;
     top: 50%;
     right: 0;
-    content: '';
+    content: "";
     background-color: currentColor;
     text-align: right;
     transform: translateY(-50%);
@@ -70,7 +70,7 @@ const Container = styled.details`
   &::before {
     width: 100%;
     height: 100%;
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
