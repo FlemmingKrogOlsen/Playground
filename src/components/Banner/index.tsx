@@ -1,11 +1,8 @@
 import { ReactElement, useState } from "react";
 import { Container } from "./styled";
+import type Props from "./types";
 
-export const Banner = ({
-  image,
-  children,
-  info,
-}: Playground_BannerProps): ReactElement => {
+export const Banner = ({ image, children, info }: Props): ReactElement => {
   const [show, setShow] = useState<boolean>(false);
   return (
     <Container show={show}>

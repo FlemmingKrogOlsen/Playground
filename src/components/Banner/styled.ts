@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import type { ContainerProps } from "./types";
 
-export const Container = styled.div<Playground_BannerContainerProps>`
+export const Container = styled.div<ContainerProps>`
   overflow: hidden;
   position: relative;
   width: 100%;

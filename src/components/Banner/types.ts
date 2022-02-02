@@ -1,9 +1,9 @@
-type Playground_BannerProps = {
+export default interface Props {
   image: string;
   children: React.ReactNode;
   info: string;
-};
+}
 
-type Playground_BannerContainerProps = {
+export type ContainerProps = {
   show: boolean;
 };
