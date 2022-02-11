@@ -17,19 +17,19 @@ export const Accordion_data = [
   {
     id: 1,
     title: "Title #1",
-    content: TestScroll,
+    body: TestScroll,
     show: true,
   },
   {
     id: 2,
     title: "Title #2",
-    content: TestContent,
+    body: TestContent,
     show: false,
   },
   {
     id: 3,
     title: "Title #3",
-    content: TestContent,
+    body: TestContent,
     show: false,
   },
 ];

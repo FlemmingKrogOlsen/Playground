@@ -7,19 +7,19 @@ const text = `const data = [
   {
     id: 1,
     title: "Title #1",
-    content: YourComponentHere,
+    body: YourComponentHere,
     show: true,
   },
   {
     id: 2,
     title: "Title #2",
-    content: YourComponentHere,
+    body: YourComponentHere,
     show: false,
   },
   {
     id: 3,
     title: "Title #3",
-    content: YourComponentHere,
+    body: YourComponentHere,
     show: false,
   },
 ]
