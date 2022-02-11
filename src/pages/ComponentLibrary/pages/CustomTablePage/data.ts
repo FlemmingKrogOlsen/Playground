@@ -1,4 +1,6 @@
-export const headers: Array<Playground_CustumTable_Header> = [
+import { IHeader } from "components/CustomTable/types";
+
+export const headers: Array<IHeader> = [
   {
     title: "User ID",
     name: "id",
